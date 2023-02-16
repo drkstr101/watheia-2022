@@ -1,4 +1,4 @@
-import styles from './index.module.scss';
+import { PageLayout } from '@watheia/waweb.ui';
 
 export function Index() {
   /*
@@ -7,7 +7,7 @@ export function Index() {
    * Note: The corresponding styles are in the ./index.scss file.
    */
   return (
-    <div className={styles.page}>
+    <PageLayout page={{}}>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -408,7 +408,7 @@ export function Index() {
           </p>
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 
