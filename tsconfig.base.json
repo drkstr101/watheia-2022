@@ -10,13 +10,33 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@watheia/waweb.ui": ["libs/ui/src/index.ts"]
+      "@watheia/components/*": [
+        "libs/components/src/lib/*"
+      ],
+      "@watheia/api/*": [
+        "libs/api/src/lib/*"
+      ],
+      "@watheia/theme": [
+        "libs/theme/src/index.ts"
+      ],
+      "@watheia/theme.styles/*": [
+        "libs/theme/src/styles/*"
+      ],
+      "@watheia/waweb.ui": [
+        "libs/ui/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

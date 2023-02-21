@@ -1,0 +1,11 @@
+{
+  "name": "Watheia Labs",
+  "description": "Fully customizable starter kit for your virtual event.",
+  "previewImage": "https://www.datocms-assets.com/94807/1676919338-wa-card.png",
+  "datocmsProjectId": "65969",
+  "deploymentType": "vercel",
+  "vercelIntegrationIds": ["oac_7yeSwUoVR5no3SlA9WM6oR7l"],
+  "buildCommand": "pnpm exec nx run home:build:production",
+  "datocmsApiTokenEnvName": "DATOCMS_READ_ONLY_API_TOKEN",
+  "livePreviewUrl": "https://watheia.vercel.app/"
+}
