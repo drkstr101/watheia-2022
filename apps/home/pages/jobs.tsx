@@ -7,7 +7,7 @@ import Page from '@watheia/components/page';
 
 import { getAllJobs } from '@watheia/api/cms-api';
 import { META_DESCRIPTION } from '@watheia/api/constants';
-import { Job } from '@watheia/api/types';
+import { Job } from '@watheia/model';
 
 type Props = {
   jobs: Job[];

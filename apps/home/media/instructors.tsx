@@ -7,7 +7,7 @@ import Page from '@watheia/components/page';
 
 import { getAllInstructors } from '@watheia/api/cms-api';
 import { META_DESCRIPTION } from '@watheia/api/constants';
-import { Instructor } from '@watheia/api/types';
+import { Instructor } from '@watheia/model';
 
 type Props = {
   instructors: Instructor[];

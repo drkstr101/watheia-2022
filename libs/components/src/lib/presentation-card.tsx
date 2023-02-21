@@ -1,5 +1,5 @@
-import { Presentation } from '@watheia/api/types';
-import cn from 'classnames';
+import { Presentation } from '@watheia/model';
+import cn from 'clsx';
 import { format, isAfter, isBefore, parseISO } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -45,33 +45,33 @@ export default function PresentationCard({
           [styles['is-live']]: isPresentationLive,
         })}
       >
-          <div className={styles['card-body']}>
-            <h4 title={title} className={styles.title}>
-              {title}
-            </h4>
-            <div className={styles.instructor}>
-              <div className={styles['avatar-group']}>
-                {instructor.map((s) => (
-                  <div key={s.name} className={styles['avatar-wrapper']}>
-                    <Image
-                      loading="lazy"
-                      alt={s.name}
-                      className={styles.avatar}
-                      src={s.image.url}
-                      title={s.name}
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-                ))}
-              </div>
-              <h5 className={styles.name}>
-                {instructor.length === 1
-                  ? instructor[0].name
-                  : `${instructor.length} instructors`}
-              </h5>
+        <div className={styles['card-body']}>
+          <h4 title={title} className={styles.title}>
+            {title}
+          </h4>
+          <div className={styles.instructor}>
+            <div className={styles['avatar-group']}>
+              {instructor.map((s) => (
+                <div key={s.name} className={styles['avatar-wrapper']}>
+                  <Image
+                    loading="lazy"
+                    alt={s.name}
+                    className={styles.avatar}
+                    src={s.image.url}
+                    title={s.name}
+                    width={24}
+                    height={24}
+                  />
+                </div>
+              ))}
             </div>
+            <h5 className={styles.name}>
+              {instructor.length === 1
+                ? instructor[0].name
+                : `${instructor.length} instructors`}
+            </h5>
           </div>
+        </div>
       </Link>
     </div>
   );

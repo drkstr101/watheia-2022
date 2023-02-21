@@ -1,6 +1,6 @@
 import { TicketGenerationState } from '@watheia/api/constants';
 import GithubIcon from '@watheia/components/icons/icon-github';
-import cn from 'classnames';
+import cn from 'clsx';
 import IconAvatar from '../../../components/src/lib/icons/icon-avatar';
 import styles from './ticket-profile.module.css';
 

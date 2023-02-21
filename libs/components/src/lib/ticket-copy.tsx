@@ -1,5 +1,5 @@
 import { SITE_URL } from '@watheia/api/constants';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import IconCopy from '../../../components/src/lib/icons/icon-copy';
 import styles from './ticket-copy.module.css';

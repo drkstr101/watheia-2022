@@ -2,7 +2,7 @@ import { DATE, SITE_NAME, TicketGenerationState } from '@watheia/api/constants';
 import { UserData } from '@watheia/api/hooks/use-conf-data';
 import isMobileOrTablet from '@watheia/api/is-mobile-or-tablet';
 import { scrollTo } from '@watheia/api/smooth-scroll';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import Tilt from 'vanilla-tilt';
 import Form from './form';

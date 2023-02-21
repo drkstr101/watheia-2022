@@ -1,6 +1,6 @@
-import { Course, Instructor, Job, Sponsor } from '@watheia/api/types';
+import { Course, Instructor, Job, Sponsor } from '@watheia/model';
 
-import * as datoCmsApi from './dato';
+import datoCmsApi from './dato';
 
 const cmsApi: {
   getAllInstructors: () => Promise<Instructor[]>;

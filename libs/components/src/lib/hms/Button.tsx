@@ -1,5 +1,5 @@
+import cn from 'clsx';
 import React from 'react';
-import cn from 'classnames';
 
 interface ButtonProps {
   type?: JSX.IntrinsicElements['button']['type'];

@@ -1,4 +1,4 @@
-import { Job } from '@watheia/api/types';
+import { Job } from '@watheia/model';
 import styles from './jobs-grid.module.css';
 
 type Props = {

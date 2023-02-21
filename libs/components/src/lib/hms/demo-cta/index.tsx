@@ -2,7 +2,7 @@ import { CrossIcon } from '@100mslive/react-icons';
 import * as Dialog from '@radix-ui/react-dialog';
 import useClickOutside from '@watheia/api/hooks/use-click-outside';
 import InfoIcon from '@watheia/components/icons/icon-info';
-import cn from 'classnames';
+import cn from 'clsx';
 import React from 'react';
 import DemoModal from '../demo-modal';
 import styles from './index.module.css';

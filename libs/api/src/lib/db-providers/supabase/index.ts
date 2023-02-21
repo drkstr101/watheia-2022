@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { ConfUser } from '@watheia/api/types';
+import { ConfUser } from '@watheia/model';
 
 const supabase =
   process.env.SUPABASE_URL &&
@@ -73,7 +73,7 @@ export async function updateUserWithGitHubUser(
     .select('userData')
     .eq('id', token)
     .single();
-  const { login: username, name } = data?.userData;
+  const { login: username, name } = data?.userData ?? {};
   if (!username) {
     throw new Error('Invalid or expired token');
   }

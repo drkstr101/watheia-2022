@@ -1,6 +1,6 @@
 import { SkipNavContent } from '@reach/skip-nav';
 import { NAVIGATION } from '@watheia/api/constants';
-import cn from 'classnames';
+import cn from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -39,7 +39,7 @@ export default function Layout({
           <div className={styles['header-logos']}>
             <MobileMenu key={router.asPath} />
             <Link href="/" className={styles.logo}>
-                <Logo />
+              <Logo />
             </Link>
           </div>
           <div className={styles.tabs}>

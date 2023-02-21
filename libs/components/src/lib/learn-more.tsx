@@ -1,5 +1,5 @@
 import { REPO } from '@watheia/api/constants';
-import cn from 'classnames';
+import cn from 'clsx';
 import styles from './contact.module.css';
 import styleUtils from './utils.module.css';
 

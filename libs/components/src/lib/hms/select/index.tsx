@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import cn from 'clsx';
 import styles from './index.module.css';
 
 export default function Select({

@@ -1,4 +1,4 @@
-import { InviteCourseIcon } from '@100mslive/react-icons';
+import { InviteStageIcon } from '@100mslive/react-icons';
 import {
   REPO,
   SITE_ORIGIN,
@@ -7,11 +7,11 @@ import {
 import useConfData from '@watheia/api/hooks/use-conf-data';
 import isMobileOrTablet from '@watheia/api/is-mobile-or-tablet';
 import { scrollTo } from '@watheia/api/smooth-scroll';
-import { GitHubOAuthData } from '@watheia/api/types';
 import { saveGithubToken } from '@watheia/api/user-api';
 import CheckIcon from '@watheia/components/icons/icon-check';
 import GithubIcon from '@watheia/components/icons/icon-github';
-import cn from 'classnames';
+import { GitHubOAuthData } from '@watheia/model';
+import cn from 'clsx';
 import { useRef, useState } from 'react';
 import formStyles from './form.module.css';
 import LoadingDots from './loading-dots';
@@ -82,10 +82,16 @@ export default function Form({
         const windowWidth = 600;
         const windowHeight = 700;
         // https://stackoverflow.com/a/32261263/114157
-        const windowTop =
-          window.top.outerHeight / 2 + window.top.screenY - 700 / 2;
-        const windowLeft =
-          window.top.outerWidth / 2 + window.top.screenX - 600 / 2;
+        const windowTop = window
+          ? (window.top?.outerHeight ?? 0) / 2 +
+            (window.top?.screenY ?? 0) -
+            700 / 2
+          : 0;
+        const windowLeft = window
+          ? (window.top?.outerWidth ?? 0) / 2 +
+            (window.top?.screenX ?? 0) -
+            600 / 2
+          : 0;
 
         const openedWindow = window.open(
           `https://github.com/login/oauth/authorize?client_id=${encodeURIComponent(
@@ -152,10 +158,11 @@ export default function Form({
             new Image().src = `https://github.com/${usernameFromResponse}.png`;
 
             // Prefetch the twitter share URL to eagerly generate the page
-            fetch(`/tickets/${usernameFromResponse}`).catch((_) => {});
+            fetch(`/tickets/${usernameFromResponse}`).catch((err) => {
+              console.error(err);
+            });
           })
           .catch((err) => {
-            // eslint-disable-next-line no-console
             console.error(err);
             setFormState('error');
             setErrorMsg('Error! Please try again.');
@@ -231,7 +238,7 @@ export default function Form({
         >
           <div className={ticketFormStyles.generateWithGithub}>
             <span className={ticketFormStyles.githubIcon}>
-              <InviteCourseIcon />
+              <InviteStageIcon />
             </span>
             Go to Live Course
           </div>

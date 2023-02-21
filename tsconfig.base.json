@@ -17,9 +17,9 @@
     "paths": {
       "@watheia/api/*": ["libs/api/src/lib/*"],
       "@watheia/components/*": ["libs/components/src/lib/*"],
+      "@watheia/model": ["libs/model/src/index.ts"],
       "@watheia/theme": ["libs/theme/src/index.ts"],
-      "@watheia/theme.styles/*": ["libs/theme/src/styles/*"],
-      "@watheia/waweb.ui": ["libs/ui/src/index.ts"]
+      "@watheia/theme.styles/*": ["libs/theme/src/styles/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

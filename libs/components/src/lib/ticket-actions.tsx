@@ -1,5 +1,5 @@
 import { SITE_URL, TWEET_TEXT } from '@watheia/api/constants';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import IconDownload from '../../../components/src/lib/icons/icon-download';
 import IconLinkedin from '../../../components/src/lib/icons/icon-linkedin';

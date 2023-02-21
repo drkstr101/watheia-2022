@@ -6,7 +6,7 @@ import {
   SITE_NAME,
 } from '@watheia/api/constants';
 import VercelLogo from '@watheia/components/icons/icon-platform';
-import cn from 'classnames';
+import cn from 'clsx';
 import styles from './footer.module.css';
 
 export function HostedByVercel() {

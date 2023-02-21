@@ -2,7 +2,7 @@ import { parsedUserAgent } from '@100mslive/hms-video';
 import { ArrowRightIcon } from '@100mslive/react-icons';
 import { useHMSActions } from '@100mslive/react-sdk';
 import * as Dialog from '@radix-ui/react-dialog';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styles from '../conf-entry.module.css';

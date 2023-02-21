@@ -1,13 +1,18 @@
-import Image from 'next/image';
+import clsx from 'clsx';
+import Image, { ImageProps } from 'next/image';
 
-export default function IconLogo() {
+export default function IconLogo({
+  className,
+  ...props
+}: Omit<ImageProps, 'alt' | 'src'>) {
   return (
-    <div className="h-12 w-12">
-      <Image
-        width={512}
-        height={512}
-        src="https://www.datocms-assets.com/63265/1644788631-icon.png"
-      />
-    </div>
+    <Image
+      width={512}
+      height={512}
+      className={clsx('h-10 w-10', className)}
+      alt="Icon logo"
+      src="https://www.datocms-assets.com/63265/1644788631-icon.png"
+      {...props}
+    ></Image>
   );
 }

@@ -2,7 +2,7 @@ import {
   ArrowRightIcon,
   MicOffIcon,
   MicOnIcon,
-  SettingIcon,
+  SettingsIcon,
   VideoOffIcon,
   VideoOnIcon,
 } from '@100mslive/react-icons';
@@ -104,7 +104,7 @@ const PreviewContainer: React.FC<{ name: string }> = ({ name }) => {
           <div className="absolute z-30 bottom-4 right-4">
             <SettingDialog>
               <IconButton>
-                <SettingIcon />
+                <SettingsIcon />
               </IconButton>
             </SettingDialog>
           </div>
@@ -122,13 +122,18 @@ const PreviewContainer: React.FC<{ name: string }> = ({ name }) => {
 const PreviewVideo: React.FC<{ videoTrack: HMSPeer['videoTrack'] }> = ({
   videoTrack,
 }) => {
-  const ref = useVideo(videoTrack || '');
+  const ref = useVideo({
+    trackId: videoTrack || '',
+  });
   return (
     <video
       className={`w-full h-full rounded-lg object-cover mirror`}
       autoPlay
       muted
       playsInline
+      // TODO
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       ref={ref}
     />
   );

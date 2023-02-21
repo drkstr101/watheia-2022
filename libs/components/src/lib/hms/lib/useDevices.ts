@@ -4,8 +4,8 @@ import {
   selectIsAllowedToPublish,
   selectLocalMediaSettings,
 } from '@100mslive/hms-video-store';
-import { useCallback } from 'react';
 import { useHMSActions, useHMSStore } from '@100mslive/react-sdk';
+import { useCallback } from 'react';
 
 export enum DeviceType {
   videoInput = 'videoInput',
@@ -56,17 +56,31 @@ export const useDevices = (): useDevicesResult => {
     [DeviceType.videoInput]: sdkSelectedDevices.videoInputDeviceId,
   };
 
-  if (!isAllowedToPublish.video && allDevices.videoInput === []) {
+  if (
+    !isAllowedToPublish.video &&
+    allDevices.videoInput &&
+    allDevices.videoInput.length === 0
+  ) {
     delete allDevices[DeviceType.videoInput];
     delete selectedDeviceIDs[DeviceType.videoInput];
   }
-  if (!isAllowedToPublish.audio && allDevices.audioInput === []) {
+  if (
+    !isAllowedToPublish.audio &&
+    allDevices.audioInput &&
+    allDevices.audioInput.length === 0
+  ) {
     delete allDevices[DeviceType.audioInput];
     delete selectedDeviceIDs[DeviceType.audioInput];
   }
 
   const updateDevice = useCallback(
-    async ({ deviceType, deviceId }) => {
+    async ({
+      deviceType,
+      deviceId,
+    }: {
+      deviceType: DeviceType;
+      deviceId: string;
+    }) => {
       try {
         switch (deviceType) {
           case DeviceType.audioInput:
@@ -79,7 +93,9 @@ export const useDevices = (): useDevicesResult => {
             hmsActions.setAudioOutputDevice(deviceId);
             break;
         }
-      } catch (err) {}
+      } catch (err) {
+        console.error(err);
+      }
     },
     [hmsActions]
   );

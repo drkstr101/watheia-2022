@@ -9,7 +9,7 @@ import {
 } from '@react-aria/overlays';
 import { useOverlayTriggerState } from '@react-stately/overlays';
 import { NAVIGATION } from '@watheia/api/constants';
-import cn from 'classnames';
+import cn from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
@@ -39,10 +39,14 @@ function ModalDialog(
           ref={ref}
         >
           {NAVIGATION.map(({ name, route }) => (
-            <Link key={name} href={route} className={cn(styles['nav-item'], {
-                  [styles['nav-active']]: activeRoute.startsWith(route),
-                })}>
-                {name}
+            <Link
+              key={name}
+              href={route}
+              className={cn(styles['nav-item'], {
+                [styles['nav-active']]: activeRoute.startsWith(route),
+              })}
+            >
+              {name}
             </Link>
           ))}
         </nav>

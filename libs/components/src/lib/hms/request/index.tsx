@@ -16,7 +16,7 @@ import {
   CrossIcon,
   MicOffIcon,
   MicOnIcon,
-  SettingIcon,
+  SettingsIcon,
   VideoOffIcon,
   VideoOnIcon,
 } from '@100mslive/react-icons';
@@ -219,7 +219,7 @@ const GuestPreview: React.FC<{ roleChange: (b: boolean) => void }> = ({
             />
             <Dialog.Trigger asChild>
               <IconButton>
-                <SettingIcon />
+                <SettingsIcon />
               </IconButton>
             </Dialog.Trigger>
             <Dialog.Content className="dialog-content bg-gray-700 md:w-[520px] rounded-2xl w-[90%]  dialog-animation ">
@@ -293,7 +293,11 @@ const GuestPreview: React.FC<{ roleChange: (b: boolean) => void }> = ({
             Preview your video and audio before joining the course
           </p>
         </div>
-        <form onSubmit={() => {}}>
+        <form
+          onSubmit={(e) => {
+            console.info('Form Submitted', new FormData(e.currentTarget));
+          }}
+        >
           <p className="flex items-center space-x-1">
             <InfoIcon /> Note: Your mic is {isAudioOn ? 'on' : 'off'} and video
             is {isVideoOn ? 'on' : 'off'}

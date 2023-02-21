@@ -7,7 +7,7 @@ import SponsorsGrid from '@watheia/components/sponsors-grid';
 
 import { getAllSponsors } from '@watheia/api/cms-api';
 import { META_DESCRIPTION } from '@watheia/api/constants';
-import { Sponsor } from '@watheia/api/types';
+import { Sponsor } from '@watheia/model';
 
 type Props = {
   sponsors: Sponsor[];

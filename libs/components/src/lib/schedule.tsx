@@ -1,5 +1,5 @@
-import { Course, Presentation } from '@watheia/api/types';
-import cn from 'classnames';
+import { Course, Presentation } from '@watheia/model';
+import cn from 'clsx';
 import PresentationCard from './presentation-card';
 import styles from './schedule.module.css';
 

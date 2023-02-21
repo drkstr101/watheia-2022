@@ -1,9 +1,9 @@
-import { Course, Instructor, Job, Sponsor } from '@watheia/api/types';
+import { Course, Instructor, Job, Sponsor } from '@watheia/model';
 
 const API_URL = 'https://graphql.datocms.com/';
 const API_TOKEN = process.env.DATOCMS_READ_ONLY_API_TOKEN;
 
-async function fetchCmsAPI(
+export async function fetchCmsAPI(
   query: string,
   { variables }: { variables?: Record<string, any> } = {}
 ) {
@@ -29,7 +29,7 @@ async function fetchCmsAPI(
   return json.data;
 }
 
-export async function getAllInstructors(): Promise<Instructor[]> {
+async function getAllInstructors(): Promise<Instructor[]> {
   const data = await fetchCmsAPI(`
      {
        allInstructors(first: 100) {
@@ -59,7 +59,7 @@ export async function getAllInstructors(): Promise<Instructor[]> {
   return data.allInstructors;
 }
 
-export async function getAllCourses(): Promise<Course[]> {
+async function getAllCourses(): Promise<Course[]> {
   const data = await fetchCmsAPI(`
      {
        allCourses(first: 100, orderBy: order_ASC) {
@@ -89,7 +89,7 @@ export async function getAllCourses(): Promise<Course[]> {
   return data.allCourses;
 }
 
-export async function getAllSponsors(): Promise<Sponsor[]> {
+async function getAllSponsors(): Promise<Sponsor[]> {
   const data = await fetchCmsAPI(`
      {
        allCompanies(first: 100, orderBy: tierRank_ASC) {
@@ -119,7 +119,7 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
   return data.allCompanies;
 }
 
-export async function getAllJobs(): Promise<Job[]> {
+async function getAllJobs(): Promise<Job[]> {
   const data = await fetchCmsAPI(`
      {
        allJobs(first: 100, orderBy: rank_ASC) {
@@ -136,3 +136,5 @@ export async function getAllJobs(): Promise<Job[]> {
 
   return data.allJobs;
 }
+
+export default { getAllCourses, getAllInstructors, getAllJobs, getAllSponsors };

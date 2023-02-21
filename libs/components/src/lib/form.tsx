@@ -2,7 +2,7 @@ import FormError from '@watheia/api/form-error';
 import useConfData from '@watheia/api/hooks/use-conf-data';
 import useEmailQueryParam from '@watheia/api/hooks/use-email-query-param';
 import { register } from '@watheia/api/user-api';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import Captcha, { useCaptcha } from './captcha';

@@ -1,4 +1,4 @@
-import { InviteCourseIcon, RemoveUserIcon } from '@100mslive/react-icons';
+import { InviteStageIcon, RemoveUserIcon } from '@100mslive/react-icons';
 import {
   selectLocalPeerRole,
   useHMSActions,
@@ -45,7 +45,7 @@ const Dropdown: React.FC<{ id: string; role: string }> = ({ id, role }) => {
                   className={`w-full flex items-center px-2 py-3 focus:bg-gray-600 focus:outline-none text-sm rounded-lg`}
                   onClick={changeRole}
                 >
-                  <InviteCourseIcon className="mr-2" />
+                  <InviteStageIcon className="mr-2" />
                   {role === 'viewer'
                     ? 'Bring user to course'
                     : 'Remove user from course'}

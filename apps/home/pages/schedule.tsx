@@ -5,15 +5,15 @@ import Layout from '@watheia/components/layout';
 import Page from '@watheia/components/page';
 import Schedule from '@watheia/components/schedule';
 
-import { getAllStages } from '@watheia/api/cms-api';
+import { getAllCourses } from '@watheia/api/cms-api';
 import { META_DESCRIPTION } from '@watheia/api/constants';
-import { Stage } from '@watheia/api/types';
+import { Course } from '@watheia/model';
 
 type Props = {
-  allStages: Stage[];
+  allCourses: Course[];
 };
 
-export default function SchedulePage({ allStages }: Props) {
+export default function SchedulePage({ allCourses }: Props) {
   const meta = {
     title: 'Schedule - Virtual Event Starter Kit',
     description: META_DESCRIPTION,
@@ -23,18 +23,18 @@ export default function SchedulePage({ allStages }: Props) {
     <Page meta={meta}>
       <Layout>
         <Header hero="Schedule" description={meta.description} />
-        <Schedule allStages={allStages} />
+        <Schedule allCourses={allCourses} />
       </Layout>
     </Page>
   );
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allStages = await getAllStages();
+  const allCourses = await getAllCourses();
 
   return {
     props: {
-      allStages,
+      allCourses,
     },
     revalidate: 60,
   };

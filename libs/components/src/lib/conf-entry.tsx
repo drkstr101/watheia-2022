@@ -1,6 +1,6 @@
 import useEmailQueryParam from '@watheia/api/hooks/use-email-query-param';
 import { register } from '@watheia/api/user-api';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useCallback, useState } from 'react';
 import Captcha, { useCaptcha } from './captcha';
 import styles from './conf-entry.module.css';

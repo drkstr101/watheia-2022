@@ -7,7 +7,7 @@ import Button from './Button';
 import { ChangeRoleDialog } from './demo-cta/room-cta';
 
 const EmptyRoom = () => {
-  const role = useHMSStore(selectLocalPeerRole) || 'viewer';
+  const role = useHMSStore(selectLocalPeerRole) || { name: 'viewer' };
   const [copied, setCopied] = useState(false);
   const router = useRouter();
   const copy = () => {

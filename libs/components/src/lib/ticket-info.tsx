@@ -17,7 +17,7 @@ export default function TicketInfo({
     <div className={styles['created-by']}>
       <div className={styles['created-by-text']}>Created by </div>
       <div className={styles['created-by-logo']}>
-        <VercelLogo height="100%" color="var(--accents-4)" />
+        <VercelLogo height="100%" color="dark" />
       </div>
     </div>
   );

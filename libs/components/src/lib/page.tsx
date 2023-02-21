@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import cn from 'clsx';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 

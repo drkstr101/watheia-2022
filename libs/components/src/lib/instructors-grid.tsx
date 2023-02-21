@@ -1,4 +1,4 @@
-import { Instructor } from '@watheia/api/types';
+import { Instructor } from '@watheia/model';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './instructors-grid.module.css';

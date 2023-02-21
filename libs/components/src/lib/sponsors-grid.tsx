@@ -1,5 +1,5 @@
-import { Sponsor } from '@watheia/api/types';
-import cn from 'classnames';
+import { Sponsor } from '@watheia/model';
+import cn from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './sponsors-grid.module.css';

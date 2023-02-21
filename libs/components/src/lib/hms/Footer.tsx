@@ -1,20 +1,19 @@
 import {
+  MicOffIcon,
+  MicOnIcon,
+  SettingsIcon,
+  ShareScreenIcon,
+  VideoOffIcon,
+  VideoOnIcon,
+} from '@100mslive/react-icons';
+import {
+  selectIsAllowedToPublish,
+  selectIsLocalScreenShared,
+  selectLocalPeerRole,
   useAVToggle,
   useHMSActions,
   useHMSStore,
-  selectIsLocalScreenShared,
-  selectLocalPeerRole,
-  selectIsAllowedToPublish,
 } from '@100mslive/react-sdk';
-import {
-  VideoOffIcon,
-  VideoOnIcon,
-  MicOffIcon,
-  MicOnIcon,
-  ShareScreenIcon,
-  SettingIcon,
-} from '@100mslive/react-icons';
-import React from 'react';
 import ControlButton from './ControlButton';
 import LeaveDialog from './LeaveDialog';
 import SettingDialog from './SettingDialog';
@@ -67,8 +66,13 @@ const Footer = () => {
       ) : null}
 
       <SettingDialog>
-        <ControlButton text="Setting" onClick={() => {}}>
-          <SettingIcon />
+        <ControlButton
+          text="Setting"
+          onClick={() => {
+            /* pass */
+          }}
+        >
+          <SettingsIcon />
         </ControlButton>
       </SettingDialog>
       {role?.name !== 'viewer' ? <LeaveDialog /> : null}

@@ -1,7 +1,7 @@
 import { selectIsConnectedToRoom, useHMSStore } from '@100mslive/react-sdk';
 import useLoginStatus from '@watheia/api/hooks/use-login-status';
-import { Course } from '@watheia/api/types';
-import cn from 'classnames';
+import { Course } from '@watheia/model';
+import cn from 'clsx';
 import useSWR from 'swr';
 import Room from '../../../components/src/lib/hms/Room';
 import Sidebar from '../../../components/src/lib/hms/sidebar';

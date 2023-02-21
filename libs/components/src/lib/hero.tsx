@@ -1,5 +1,5 @@
 import { DATE, SITE_DESCRIPTION, SITE_NAME } from '@watheia/api/constants';
-import cn from 'classnames';
+import cn from 'clsx';
 import styles from './hero.module.css';
 import styleUtils from './utils.module.css';
 

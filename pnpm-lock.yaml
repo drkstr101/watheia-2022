@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@100mslive/hms-video': ^0.7.3
+  '@100mslive/hms-video-store': ^0.8.3
   '@100mslive/react-icons': ^0.6.3
   '@100mslive/react-sdk': ^0.6.3
   '@agility/content-fetch': 1.1.5
@@ -34,6 +36,11 @@ specifiers:
   '@radix-ui/react-dropdown-menu': 0.1.6
   '@radix-ui/react-tabs': 0.1.5
   '@reach/skip-nav': 0.18.0
+  '@react-aria/button': ^3.6.4
+  '@react-aria/dialog': ^3.4.2
+  '@react-aria/focus': ^3.10.1
+  '@react-aria/overlays': ^3.12.1
+  '@react-stately/overlays': ^3.4.4
   '@rollup/plugin-url': ^7.0.0
   '@storybook/addon-essentials': ^6.5.15
   '@storybook/builder-vite': ^0.2.6
@@ -45,7 +52,6 @@ specifiers:
   '@swc/core': ^1.2.173
   '@swc/jest': 0.2.20
   '@testing-library/react': 13.4.0
-  '@types/classnames': 2.3.1
   '@types/cookie': 0.5.1
   '@types/htmlescape': 1.1.1
   '@types/ioredis': 4.28.10
@@ -65,7 +71,6 @@ specifiers:
   babel-jest: 28.1.1
   babel-loader: 8.1.0
   chrome-aws-lambda: 10.1.0
-  classnames: 2.3.2
   clsx: ^1.2.1
   cookie: 0.5.0
   core-js: ^3.6.5
@@ -86,7 +91,9 @@ specifiers:
   ioredis: 4.28.5
   jest: 28.1.1
   jest-environment-jsdom: 28.1.1
+  jest-fetch-mock: ^3.0.3
   ms: 2.1.3
+  nanoid: ^4.0.1
   next: 13.1.1
   nprogress: 0.2.0
   nx: 15.6.3
@@ -117,6 +124,8 @@ specifiers:
   vercel: ^28.16.2
 
 dependencies:
+  '@100mslive/hms-video': 0.7.3
+  '@100mslive/hms-video-store': 0.8.3_react@18.2.0
   '@100mslive/react-icons': 0.6.3_react@18.2.0
   '@100mslive/react-sdk': 0.6.3_biqbaboplfbrettd7655fr4n2y
   '@agility/content-fetch': 1.1.5
@@ -129,9 +138,13 @@ dependencies:
   '@radix-ui/react-dropdown-menu': 0.1.6_2zx2umvpluuhvlq44va5bta2da
   '@radix-ui/react-tabs': 0.1.5_react@18.2.0
   '@reach/skip-nav': 0.18.0_biqbaboplfbrettd7655fr4n2y
+  '@react-aria/button': 3.6.4_react@18.2.0
+  '@react-aria/dialog': 3.4.2_biqbaboplfbrettd7655fr4n2y
+  '@react-aria/focus': 3.10.1_react@18.2.0
+  '@react-aria/overlays': 3.12.1_biqbaboplfbrettd7655fr4n2y
+  '@react-stately/overlays': 3.4.4_react@18.2.0
   '@supabase/supabase-js': 1.35.7
   chrome-aws-lambda: 10.1.0_puppeteer-core@5.5.0
-  classnames: 2.3.2
   clsx: 1.2.1
   cookie: 0.5.0
   core-js: 3.27.2
@@ -140,6 +153,7 @@ dependencies:
   intersection-observer: 0.12.2
   ioredis: 4.28.5
   ms: 2.1.3
+  nanoid: 4.0.1
   next: 13.1.1_cg457tka2dddtbakn226cmd5ri
   nprogress: 0.2.0
   puppeteer-core: 5.5.0
@@ -167,7 +181,7 @@ devDependencies:
   '@nrwl/js': 15.6.3_z7ebbb54hegb6ypqcjgkyvxylm
   '@nrwl/linter': 15.6.3_2gweb7o7pkltzmj3jx6phpvxki
   '@nrwl/node': 15.6.3_amj7mfchiyb62izo6hgtxfmmmi
-  '@nrwl/nx-cloud': 15.0.3
+  '@nrwl/nx-cloud': 15.1.0
   '@nrwl/nx-plugin': 15.6.3_uoof63ywx5xilvubhcw47cj5xa
   '@nrwl/react': 15.6.3_z7ebbb54hegb6ypqcjgkyvxylm
   '@nrwl/rollup': 15.6.3_ujl3oavr3tqskgjfn7gpwttm2y
@@ -186,7 +200,6 @@ devDependencies:
   '@swc/core': 1.3.35
   '@swc/jest': 0.2.20_@swc+core@1.3.35
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
-  '@types/classnames': 2.3.1
   '@types/cookie': 0.5.1
   '@types/htmlescape': 1.1.1
   '@types/ioredis': 4.28.10
@@ -218,6 +231,7 @@ devDependencies:
   husky: 8.0.3
   jest: 28.1.1_odkjkoia5xunhxkdrka32ib6vi
   jest-environment-jsdom: 28.1.1
+  jest-fetch-mock: 3.0.3
   nx: 15.6.3_@swc+core@1.3.35
   nx-cloud: 15.0.3
   postcss: 8.4.19
@@ -4214,8 +4228,8 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nrwl/nx-cloud/15.0.3:
-    resolution: {integrity: sha512-KvwM8/IbCOlbWIzi+Tm14tJkEdQK3ruN6TPUmeKnkeFZsJyoFw4GCyKJMOLs8y4MQokHgskg3nbF822JLR9xJg==}
+  /@nrwl/nx-cloud/15.1.0:
+    resolution: {integrity: sha512-QcMlPZ+DBzTWcoWSziyrENYhBLfE5MSns3M5qJB8EClg9/vomepA+NLOLWB+/O0sfdeBGFKlvFyrjf+CnVaB2A==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -8164,13 +8178,6 @@ packages:
       '@types/responselike': 1.0.0
     dev: true
 
-  /@types/classnames/2.3.1:
-    resolution: {integrity: sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==}
-    deprecated: This is a stub types definition. classnames provides its own type definitions, so you do not need this installed.
-    dependencies:
-      classnames: 2.3.2
-    dev: true
-
   /@types/connect-history-api-fallback/1.3.5:
     resolution: {integrity: sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==}
     dependencies:
@@ -10780,9 +10787,6 @@ packages:
       static-extend: 0.1.2
     dev: true
 
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-
   /clean-css/4.2.4:
     resolution: {integrity: sha512-EJUDT7nDVFDvaQgAo2G/PJvxmp1o/c6iXLbswsBbUFXi1Nr+AjA2cKmfbKDMjMvzEe75g3P6JkaDDAKk96A85A==}
     engines: {node: '>= 4.0'}
@@ -11446,7 +11450,6 @@ packages:
       node-fetch: 2.6.7
     transitivePeerDependencies:
       - encoding
-    dev: false
 
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
@@ -16306,6 +16309,15 @@ packages:
       jest-mock: 28.1.3
       jest-util: 28.1.3
 
+  /jest-fetch-mock/3.0.3:
+    resolution: {integrity: sha512-Ux1nWprtLrdrH4XwE7O7InRY6psIi3GOsqNESJgMJ+M5cv4A8Lh7SN9d2V2kKRZ8ebAfcd1LNyZguAOb6JiDqw==}
+    dependencies:
+      cross-fetch: 3.1.5
+      promise-polyfill: 8.3.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /jest-get-type/27.5.1:
     resolution: {integrity: sha512-2KY95ksYSaK7DMBWQn6dQz3kqAf3BB64y2udeG+hv4KfSOb9qwcYQstTJc1KCbsix+wLZWZYN8t7nwX3GOBLRw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -18095,6 +18107,12 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /nanoid/4.0.1:
+    resolution: {integrity: sha512-udKGtCCUafD3nQtJg9wBhRP3KMbPglUsgV5JVsXhvyBs/oefqb4sqMEhKBBgqZncYowu58p1prsZQBYvAj/Gww==}
+    engines: {node: ^14 || ^16 || >=18}
+    hasBin: true
+    dev: false
 
   /nanomatch/1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
@@ -20028,6 +20046,10 @@ packages:
         optional: true
     dependencies:
       bluebird: 3.7.2
+    dev: true
+
+  /promise-polyfill/8.3.0:
+    resolution: {integrity: sha512-H5oELycFml5yto/atYqmjyigJoAo3+OXwolYiH7OfQuYlAqhxNvTfiNMbV9hsC6Yp83yE5r2KTVmtrG6R9i6Pg==}
     dev: true
 
   /promise.allsettled/1.0.6:

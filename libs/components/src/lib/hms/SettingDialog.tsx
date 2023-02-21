@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { AudioLevelIcon, CrossIcon } from '@100mslive/react-icons';
 import * as Dialog from '@radix-ui/react-dialog';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import Button from './Button';
 import { DeviceType, useDevices } from './lib/useDevices';
 import Select from './select';
 
-const SettingDialog: React.FC = ({ children }) => {
+const SettingDialog = ({ children }: { children: ReactNode }) => {
   const { allDevices, selectedDeviceIDs, updateDevice, isAllowedToPublish } =
     useDevices();
   const videoInput = allDevices['videoInput'] || [];

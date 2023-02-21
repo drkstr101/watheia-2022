@@ -1,4 +1,4 @@
-import { ConfUser } from '@watheia/api/types';
+import { ConfUser } from '@watheia/model';
 import Redis from 'ioredis';
 import { nanoid } from 'nanoid';
 

@@ -1,5 +1,5 @@
 import { SAMPLE_TICKET_NUMBER } from '@watheia/api/constants';
-import { ConfUser } from '@watheia/api/types';
+import { ConfUser } from '@watheia/model';
 
 import * as redisApi from './db-providers/redis';
 import * as supabaseApi from './db-providers/supabase';

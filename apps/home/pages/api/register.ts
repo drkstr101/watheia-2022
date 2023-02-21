@@ -8,8 +8,8 @@ import {
   getTicketNumberByUserId,
   getUserById,
 } from '@watheia/api/db-api';
-import { ConfUser } from '@watheia/api/types';
 import { emailToId } from '@watheia/api/user-api';
+import { ConfUser } from '@watheia/model';
 import cookie from 'cookie';
 import ms from 'ms';
 import { nanoid } from 'nanoid';

@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+import CourseContainer from '@watheia/components/course-container';
 import Layout from '@watheia/components/layout';
 import Page from '@watheia/components/page';
-import CourseContainer from '@watheia/components/course-container';
 
 import { getAllCourses } from '@watheia/api/cms-api';
 import { META_DESCRIPTION } from '@watheia/api/constants';
-import { Course } from '@watheia/api/types';
+import { Course } from '@watheia/model';
 
 type Props = {
   course: Course;

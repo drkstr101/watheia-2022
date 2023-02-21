@@ -22,7 +22,13 @@ const LeaveDialog = () => {
         style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
       />
       <Dialog.Trigger asChild>
-        <ControlButton text="Leave" className="leave" onClick={() => {}}>
+        <ControlButton
+          text="Leave"
+          className="leave"
+          onClick={() => {
+            /* pass */
+          }}
+        >
           <HangUpIcon />
         </ControlButton>
       </Dialog.Trigger>

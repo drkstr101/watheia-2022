@@ -1,6 +1,6 @@
-import { Instructor } from '@watheia/api/types';
 import GithubIcon from '@watheia/components/icons/icon-github';
-import cn from 'classnames';
+import { Instructor } from '@watheia/model';
+import cn from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './instructor-section.module.css';

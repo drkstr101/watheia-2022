@@ -1,5 +1,5 @@
 import { SITE_ORIGIN } from '@watheia/api/constants';
-import { GitHubOAuthData } from '@watheia/api/types';
+import { GitHubOAuthData } from '@watheia/model';
 import htmlescape from 'htmlescape';
 
 export function renderSuccess(data?: GitHubOAuthData) {

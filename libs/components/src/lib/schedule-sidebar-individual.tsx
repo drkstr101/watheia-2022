@@ -1,5 +1,5 @@
 import { SHORT_DATE } from '@watheia/api/constants';
-import { Course } from '@watheia/api/types';
+import { Course } from '@watheia/model';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import PresentationCard from './presentation-card';

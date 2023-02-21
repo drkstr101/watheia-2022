@@ -1,5 +1,5 @@
 import px from '@watheia/api/to-pixels';
-import cn from 'classnames';
+import cn from 'clsx';
 import styles from './loading-dots.module.css';
 
 interface Props {

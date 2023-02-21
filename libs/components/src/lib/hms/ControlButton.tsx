@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 interface Props {
   active?: boolean;
@@ -7,13 +7,13 @@ interface Props {
   className?: string;
 }
 
-const ControlButton: React.FC<Props> = ({
+const ControlButton = ({
   active,
   text,
   children,
   onClick,
   className = '',
-}) => {
+}: PropsWithChildren<Props>) => {
   return (
     <div className="flex flex-col items-center">
       <button

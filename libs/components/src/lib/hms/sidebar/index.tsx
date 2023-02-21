@@ -1,7 +1,7 @@
 import { selectLocalPeerRole, useHMSStore } from '@100mslive/react-sdk';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Course } from '@watheia/api/types';
 import ScheduleSidebar from '@watheia/components/schedule-sidebar-individual';
+import { Course } from '@watheia/model';
 import Chat from './Chat';
 import Participants from './Participants';
 
