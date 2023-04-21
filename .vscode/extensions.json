@@ -3,6 +3,12 @@
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "naumovs.color-highlight",
+    "csstools.postcss",
+    "orta.vscode-jest",
+    "kavod-io.vscode-jest-test-adapter",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss"
   ]
 }
