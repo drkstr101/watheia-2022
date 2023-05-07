@@ -10,7 +10,7 @@
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
     ],
-    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
+    "sharedGlobals": []
   },
   "targetDefaults": {
     "build": {
@@ -39,22 +39,22 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e", "stylelint"],
-        "accessToken": "ZTA1YWQxZjItZDQ3Zi00YTI0LTg4YzgtOTBlZTNjNDliNWE0fHJlYWQtd3JpdGU="
+        "accessToken": "Mjk4MTRmOWEtY2NkOC00ZDY1LWJhNjktNWUzNzNlY2JkZWJmfHJlYWQtd3JpdGU="
       }
     }
   },
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "babel": true
       }
     },
-    "@nrwl/next": {
+    "@nx/next": {
       "application": {
-        "style": "@emotion/styled",
+        "style": "scss",
         "linter": "eslint"
       }
     }

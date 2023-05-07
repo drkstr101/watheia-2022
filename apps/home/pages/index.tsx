@@ -1,18 +1,13 @@
-import styled from '@emotion/styled';
-
-const StyledPage = styled.div`
-  .page {
-  }
-`;
+import styles from './index.module.scss';
 
 export function Index() {
   /*
    * Replace the elements below with your own.
    *
-   * Note: The corresponding styles are in the ./index.@emotion/styled file.
+   * Note: The corresponding styles are in the ./index.scss file.
    */
   return (
-    <StyledPage>
+    <div className={styles.page}>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -346,9 +341,9 @@ export function Index() {
               </summary>
               <pre>
                 <span># Generate UI lib</span>
-                nx g @nrwl/next:library ui
+                nx g @nx/next:library ui
                 <span># Add a component</span>
-                nx g @nrwl/next:component button --project=ui
+                nx g @nx/next:component button --project=ui
               </pre>
             </details>
             <details>
@@ -416,7 +411,7 @@ export function Index() {
           </p>
         </div>
       </div>
-    </StyledPage>
+    </div>
   );
 }
 
