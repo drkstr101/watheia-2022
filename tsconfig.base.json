@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@watheia/waweb.model": ["libs/model/src/index.ts"]
+      "@watheia/waweb.api": ["libs/api/src/index.ts"],
+      "@watheia/waweb.model": ["libs/model/src/index.ts"],
+      "@watheia/waweb.utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
