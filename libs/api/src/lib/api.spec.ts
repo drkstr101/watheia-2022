@@ -1,6 +1,6 @@
 import { api } from './api';
 
-describe('api', () => {
+describe('@watheia/waweb.api', () => {
   it('should work', () => {
     expect(api()).toEqual('api');
   });

@@ -1,2 +1,3 @@
 export { default } from './lib/model';
-export * from './types/common';
+export type * from './types/common';
+export type * from './types/content';

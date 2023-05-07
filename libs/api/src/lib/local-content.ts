@@ -1,15 +1,13 @@
-import models, { IDocumentModel } from '@watheia/waweb.model';
+import models, {
+  ContentModel,
+  ContentOptions,
+  IDocumentModel,
+} from '@watheia/waweb.model';
 import { getPageUrl } from '@watheia/waweb.utils';
-import frontmatter from 'front-matter';
 import { readFileSync } from 'fs';
 import { sync } from 'glob';
+import matter from 'gray-matter';
 import { extname, resolve } from 'path';
-import sbConfig from './api.config';
-
-// TODO use git cms source?
-
-const pagesDir = resolve(sbConfig.pagesDir || 'content/pages');
-const dataDir = resolve(sbConfig.dataDir || 'content/data');
 
 const allReferenceFields: Record<string, any> = {};
 Object.entries(models).forEach(([modelName, model]) => {
@@ -40,10 +38,10 @@ function readContent(file: string) {
   switch (extname(file).substring(1)) {
     case 'md':
       // eslint-disable-next-line no-case-declarations
-      const parsedMd = frontmatter<Record<string, any>>(rawContent);
+      const { data, content: body } = matter(rawContent);
       content = {
-        ...parsedMd.attributes,
-        content: parsedMd.body,
+        ...data,
+        content: body,
       };
       break;
     case 'json':
@@ -100,7 +98,9 @@ function resolveReferences(
   }
 }
 
-export function allContent() {
+export function allContent(config: ContentOptions): ContentModel {
+  const pagesDir = resolve(config?.pagesDir ?? 'content/pages');
+  const dataDir = resolve(config?.dataDir ?? 'content/data');
   const [data, pages] = [dataDir, pagesDir].map((dir) => {
     return contentFilesInPath(dir).map((file) => readContent(file));
   });
@@ -118,5 +118,5 @@ export function allContent() {
   const siteConfig = data.find(
     (e) => e.__metadata.modelName === models.Config.name
   );
-  return { objects, pages, props: { site: siteConfig } };
+  return { config, objects, pages, props: { site: siteConfig } };
 }

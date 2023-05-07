@@ -1,18 +1,10 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import '../src/css/main.css';
+import { WithNinetailedProvider } from '../src/utils/ninetailed-helpers';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Welcome to perpetual-cabbage!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <WithNinetailedProvider>
+      <Component {...pageProps} />
+    </WithNinetailedProvider>
   );
 }
-
-export default CustomApp;

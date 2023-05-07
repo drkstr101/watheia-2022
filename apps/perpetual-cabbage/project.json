@@ -10,7 +10,14 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/perpetual-cabbage",
-        "outputPath": "dist/apps/perpetual-cabbage"
+        "outputPath": "dist/apps/perpetual-cabbage",
+        "assets": [
+          {
+            "input": "content/assets",
+            "glob": "**/*",
+            "output": "."
+          }
+        ]
       },
       "configurations": {
         "development": {

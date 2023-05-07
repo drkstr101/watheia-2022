@@ -1,5 +1,8 @@
+import type { Config } from 'jest';
+import { resolve } from 'path';
+
 /* eslint-disable */
-export default {
+const config: Config = {
   displayName: 'perpetual-cabbage',
   preset: '../../jest.preset.js',
   transform: {
@@ -8,4 +11,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/perpetual-cabbage',
+  setupFilesAfterEnv: [resolve('tools/jest-jsdom-env.ts')],
 };
+
+export default config;
