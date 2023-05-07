@@ -6,3 +6,4 @@
 /tmp
 /pnpm-lock.yaml
 .next
+.stackbit
