@@ -1,6 +1,22 @@
+import { GetStaticProps } from 'next';
 import styles from './index.module.scss';
 
-export function Index() {
+export interface IndexPageProps {
+  slug: string;
+}
+
+export const getStaticProps: GetStaticProps<IndexPageProps> = async (
+  context
+) => {
+  return {
+    props: {
+      slug: '/',
+    },
+  };
+};
+
+export default function IndexPage(props: IndexPageProps) {
+  console.log('IndexPage(props)', props);
   /*
    * Replace the elements below with your own.
    *
@@ -414,5 +430,3 @@ export function Index() {
     </div>
   );
 }
-
-export default Index;
