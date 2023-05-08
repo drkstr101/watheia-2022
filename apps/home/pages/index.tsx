@@ -1,3 +1,5 @@
+import { StackbitConfig } from '@stackbit/types';
+import { resolveContent, resolveStaticProps } from '@watheia/cabbage.api';
 import { GetStaticProps } from 'next';
 import styles from './index.module.scss';
 
@@ -5,14 +7,13 @@ export interface IndexPageProps {
   slug: string;
 }
 
-export const getStaticProps: GetStaticProps<IndexPageProps> = async (
-  context
-) => {
-  return {
-    props: {
-      slug: '/',
-    },
-  };
+export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
+  const config = (await import('../../../stackbit.config').then(
+    (config) => config
+  )) as StackbitConfig;
+  const model = resolveContent(config);
+  const props = await resolveStaticProps('/', model);
+  return { props };
 };
 
 export default function IndexPage(props: IndexPageProps) {

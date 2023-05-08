@@ -1,4 +1,4 @@
-import { IModel, IPageModel, PostPageModel } from '@watheia/cabbage.model';
+import { IModel, IPageModel, PostPageProps } from '@watheia/cabbage.model';
 
 export function getAllPostsSorted(objects: IPageModel[]) {
   const allPosts = getAllPosts(objects);
@@ -14,10 +14,10 @@ export function getAllCategoryPostsSorted(
   return sortPosts(categoryPosts);
 }
 
-export function getAllPosts(objects: IPageModel[]): PostPageModel[] {
+export function getAllPosts(objects: IPageModel[]): PostPageProps[] {
   return objects.filter(
     (object) => object.__metadata.modelName === 'PostLayout'
-  ) as PostPageModel[];
+  ) as PostPageProps[];
 }
 
 export function getAllFeaturedPostsSorted(objects: IPageModel[]) {
@@ -32,7 +32,7 @@ export function getAllNonFeaturedPostsSorted(objects: IPageModel[]) {
   return sortPosts(nonFeaturedPosts);
 }
 
-export function sortPosts(posts: PostPageModel[]) {
+export function sortPosts(posts: PostPageProps[]) {
   return posts.sort(
     (postA, postB) =>
       new Date(postB.date ?? 0).getTime() - new Date(postA.date ?? 0).getTime()
