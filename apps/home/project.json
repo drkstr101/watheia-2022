@@ -10,14 +10,7 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/home",
-        "outputPath": "dist/apps/home",
-        "assets": [
-          {
-            "input": "content/assets",
-            "glob": "**/*",
-            "output": "."
-          }
-        ]
+        "outputPath": "dist/apps/home"
       },
       "configurations": {
         "development": {

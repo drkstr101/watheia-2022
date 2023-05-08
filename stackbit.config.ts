@@ -17,7 +17,7 @@ export default defineStackbitConfig({
   },
   assets: {
     referenceType: 'static',
-    staticDir: 'content/assets',
+    staticDir: 'apps/home/public',
     uploadDir: 'images',
     publicPath: '/',
   },
