@@ -1,4 +1,4 @@
-import { PageModel } from "@watheia/cabbage.model";
+import { PageModel } from '@watheia/cabbage.model';
 
 export function cssClassesFromUrlPath(urlPath: string): string[] {
   const parts = urlPath
