@@ -3,7 +3,7 @@ import { TypegenExecutorSchema } from './schema';
 
 const options: TypegenExecutorSchema = {
   name: 'test-model',
-  output: 'output.ts',
+  output: 'tmp/model.ts',
 };
 
 describe('Typegen Executor', () => {
