@@ -1,2 +1,2 @@
 export { default } from './lib/cabbage-model';
-export type * from './types/content';
+export type * from './types/common';

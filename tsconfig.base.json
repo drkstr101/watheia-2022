@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@watheia/cabbage.api": ["libs/cabbage/api/src/index.ts"],
-      "@watheia/cabbage.model": ["libs/cabbage/model/src/index.ts"]
+      "@watheia/cabbage.model": ["libs/cabbage/model/src/index.ts"],
+      "@watheia/nx-cabbage": ["libs/nx-cabbage/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

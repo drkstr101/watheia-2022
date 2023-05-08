@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "Typegen executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The project where the model is located.",
+      "x-prompt": "Which project is the model located in?",
+      "x-dropdown": "projects"
+    },
+    "output": {
+      "type": "string",
+      "description": "Relative path to the output file",
+      "default": "src/types/model.ts"
+    }
+  },
+  "required": []
+}

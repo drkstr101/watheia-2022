@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "typegen": {
+      "implementation": "./src/executors/typegen/executor",
+      "schema": "./src/executors/typegen/schema.json",
+      "description": "typegen executor"
+    }
+  }
+}
