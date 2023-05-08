@@ -400,7 +400,7 @@ sections:
           - pr-7
     type: DividerSection
   - type: CarouselSection
-    title: null
+    # title: null
     subtitle: What our customers say about us
     items:
       - title: >-

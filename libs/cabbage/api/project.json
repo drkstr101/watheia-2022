@@ -11,7 +11,7 @@
         "outputPath": "dist/libs/cabbage/api",
         "main": "libs/cabbage/api/src/index.ts",
         "tsConfig": "libs/cabbage/api/tsconfig.lib.json",
-        "assets": ["libs/cabbage/api/*.md"]
+        "assets": ["libs/cabbage/api/**/*.md"]
       }
     },
     "publish": {

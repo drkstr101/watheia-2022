@@ -36,11 +36,10 @@ seo:
     and design.
   socialImage: /images/img-placeholder.svg
   type: Seo
-type: PostFeedLayout
 bottomSections: []
 postFeed:
   type: PagedPostsSection
-  title: null
+  # title: null
   subtitle: null
   showThumbnail: true
   showExcerpt: true

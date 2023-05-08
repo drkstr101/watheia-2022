@@ -1,16 +1,5 @@
-export interface ContentOptions {
-  pagesDir: string;
-}
+import { ContentModel, ContentOptions } from '@watheia/cabbage.model';
 
-export interface ContentModel {
-  readonly config: ContentOptions;
-  readonly objects: any[];
-  readonly pages: any[];
-  readonly props: Record<string, any>;
-}
-
-export function allContent(
-  config: ContentOptions = { pagesDir: 'content/pages' }
-): ContentModel {
+export function resolveContent(config: ContentOptions): ContentModel {
   return { config, objects: [], pages: [], props: {} };
 }
