@@ -55,12 +55,12 @@ sections:
           textAlign: center
       type: TitleBlock
     people:
-      - content/data/person1.json
-      - content/data/person2.json
-      - content/data/person3.json
-      - content/data/person4.json
-      - content/data/person5.json
-      - content/data/person6.json
+      - person1.json
+      - person2.json
+      - person3.json
+      - person4.json
+      - person5.json
+      - person6.json
     variant: three-col-grid
     colors: bg-light-fg-dark
     styles:

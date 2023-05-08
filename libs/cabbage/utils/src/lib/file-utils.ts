@@ -23,11 +23,14 @@ export function syncContentFiles(dirPath: string) {
   return glob.sync(globPattern);
 }
 
-export function readContentFile(filePath: string): IModel {
+export async function readContentFile(
+  filePath: string,
+  baseDir = ''
+): Promise<IModel> {
   let content = null;
   switch (extname(filePath).substring(1)) {
     case 'md':
-      content = readMarkdownFile(filePath);
+      content = await readMarkdownFile(filePath);
       break;
     case 'json':
       content = JSON.parse(readFileSync(filePath, 'utf8'));
@@ -38,7 +41,8 @@ export function readContentFile(filePath: string): IModel {
 
   // Make Sourcebit-compatible
   content.__metadata = {
-    id: filePath,
+    // strip the entire length of baseDir plus leading '/'
+    id: filePath.substring(baseDir.length + 1),
     modelName: content.type,
   };
 

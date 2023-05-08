@@ -68,13 +68,22 @@ function resolveReferences(
   }
 }
 
-export function resolveContent(config: ContentOptions): ContentModel {
-  const pagesDir = resolve(config?.pagesDir ?? 'content/pages');
-  const dataDir = resolve(config?.dataDir ?? 'content/data');
-  const [data, pages] = [dataDir, pagesDir].map((dir) => {
-    return syncContentFiles(dir).map((f) => readContentFile(f));
-  }) as [IModel[], IPageModel[]];
+export async function resolveContent(
+  config: ContentOptions
+): Promise<ContentModel> {
+  const pagesDir = resolve(config.pagesDir ?? 'content/pages');
+  const dataDir = resolve(config.dataDir ?? 'content/data');
+
+  const data = (await Promise.all(
+    syncContentFiles(dataDir).map((f) => readContentFile(f, dataDir))
+  )) as IModel[];
+
+  const pages = (await Promise.all(
+    syncContentFiles(pagesDir).map((f) => readContentFile(f, pagesDir))
+  )) as IPageModel[];
+
   const objects = [...pages, ...data];
+
   const fileToContent = Object.fromEntries(
     objects.map((o) => [o.__metadata.id, o])
   );

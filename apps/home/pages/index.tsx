@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
   const config = (await import('../../../stackbit.config').then(
     (config) => config
   )) as StackbitConfig;
-  const model = resolveContent(config);
+  const model = await resolveContent(config);
   const props = await resolveStaticProps('/', model);
   return { props };
 };
