@@ -1,3 +1,5 @@
+import { existsSync, mkdirSync } from 'fs';
+import { resolve } from 'path';
 import executor from './executor';
 import { TypegenExecutorSchema } from './schema';
 
@@ -6,8 +8,14 @@ const options: TypegenExecutorSchema = {
   output: 'tmp/model.ts',
 };
 
-describe('Typegen Executor', () => {
-  it('can run', async () => {
+const tempDir = resolve('tmp');
+
+describe('@watheia/nx-cabbage.generator', () => {
+  if (!existsSync(tempDir)) {
+    mkdirSync(tempDir);
+  }
+
+  it('SHOULD generate model types', async () => {
     const output = await executor(options);
     expect(output.success).toBe(true);
   });

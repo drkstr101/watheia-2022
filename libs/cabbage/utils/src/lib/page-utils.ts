@@ -1,4 +1,4 @@
-import { PageModel } from '@watheia/cabbage.model';
+import { IPageModel } from '@watheia/cabbage.model';
 
 export function cssClassesFromUrlPath(urlPath: string): string[] {
   const parts = urlPath
@@ -13,9 +13,9 @@ export function cssClassesFromUrlPath(urlPath: string): string[] {
   });
 }
 
-export function getPageUrl(page: PageModel): string | null {
+export function getPageUrl(page: IPageModel): string {
   if (!page || !page.slug) {
-    return null;
+    throw new Error(`Failed to get slug value from ${page}`);
   }
 
   if (['PostLayout'].includes(page.__metadata?.modelName ?? '')) {

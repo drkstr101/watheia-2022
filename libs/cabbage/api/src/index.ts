@@ -1,1 +1,1 @@
-export * from './lib/cabbage-api';
+export * from './lib/resolver';
