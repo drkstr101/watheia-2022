@@ -9,7 +9,7 @@ const { resolve } = require('path');
  **/
 const nextConfig = {
   env: {
-    stackbitPreview: process.env["STACKBIT_PREVIEW"] ?? "",
+    stackbitPreview: process.env['STACKBIT_PREVIEW'] ?? '',
   },
   trailingSlash: true,
   webpack: (config) => {

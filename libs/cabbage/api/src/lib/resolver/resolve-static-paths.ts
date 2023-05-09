@@ -4,13 +4,11 @@ import {
   IPageModel,
   PostFeedCategoryPageProps,
   PostFeedPageProps,
-} from '@watheia/cabbage.model';
-import {
   generatePagedPathsForPage,
   getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
   isPublished,
-} from '@watheia/cabbage.utils';
+} from '@watheia/cabbage.model';
 
 export function resolveStaticPaths({ pages, objects }: ContentModel): string[] {
   const paths = pages.reduce((paths, page) => {

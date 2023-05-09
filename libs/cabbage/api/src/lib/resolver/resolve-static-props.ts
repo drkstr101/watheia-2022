@@ -1,5 +1,6 @@
 import {
   ContentModel,
+  DebugContext,
   FeaturedPeopleSectionProps,
   FeaturedPostsSectionProps,
   FormBlockProps,
@@ -7,9 +8,6 @@ import {
   PostFeedPageProps,
   PostPageProps,
   RecentPostsSectionProps,
-} from '@watheia/cabbage.model';
-import {
-  DebugContext,
   getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
   getAllPostsSorted,
@@ -18,7 +16,7 @@ import {
   isPublished,
   mapDeepAsync,
   resolveReferences,
-} from '@watheia/cabbage.utils';
+} from '@watheia/cabbage.model';
 import { createHash } from 'crypto';
 import { SignJWT } from 'jose';
 

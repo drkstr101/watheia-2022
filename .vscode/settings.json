@@ -1,4 +1,5 @@
 {
   "eslint.validate": ["json"],
-  "jest.jestCommandLine": "yarn jest"
+  "jest.jestCommandLine": "yarn jest",
+  "cSpell.words": ["clsx"]
 }
