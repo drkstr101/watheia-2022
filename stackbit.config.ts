@@ -23,4 +23,18 @@ export default defineStackbitConfig({
   },
   pageLayoutKey: 'type',
   styleObjectModelName: 'ThemeStyle',
+  // TODO use new stackbit cms api
+  // contentSources: [
+  //   new GitContentSource({
+  //     rootPath: resolve(__dirname, 'content'),
+  //     contentDirs: ['data', 'pages'],
+  //     models: Object.values(model),
+  //     assetsConfig: {
+  //       referenceType: 'static',
+  //       staticDir: 'apps/home/public',
+  //       uploadDir: 'images',
+  //       publicPath: '/',
+  //     },
+  //   }),
+  // ],
 });
