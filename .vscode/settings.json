@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["clsx"]
+  "eslint.validate": ["json"],
+  "jest.jestCommandLine": "yarn jest"
 }

@@ -1,0 +1,8 @@
+{
+  "favicon": "/images/favicon.svg",
+  "footer": "footer.json",
+  "titleSuffix": "Theme Demo",
+  "defaultSocialImage": "/images/main-hero.svg",
+  "type": "Config",
+  "header": "header.json"
+}

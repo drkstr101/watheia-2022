@@ -1,0 +1,73 @@
+{
+  "name": "nx-cabbage",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nx-cabbage/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/nx-cabbage",
+        "main": "libs/nx-cabbage/src/index.ts",
+        "tsConfig": "libs/nx-cabbage/tsconfig.lib.json",
+        "assets": [
+          "libs/nx-cabbage/*.md",
+          {
+            "input": "./libs/nx-cabbage/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/nx-cabbage/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/nx-cabbage",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/nx-cabbage",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/nx-cabbage/**/*.ts",
+          "libs/nx-cabbage/package.json",
+          "libs/nx-cabbage/generators.json",
+          "libs/nx-cabbage/executors.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/nx-cabbage/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
+    }
+  },
+  "tags": []
+}

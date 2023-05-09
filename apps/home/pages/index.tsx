@@ -1,18 +1,30 @@
-import styled from '@emotion/styled';
+import { StackbitConfig } from '@stackbit/types';
+import { resolveContent, resolveStaticProps } from '@watheia/cabbage.api';
+import { GetStaticProps } from 'next';
+import styles from './index.module.scss';
 
-const StyledPage = styled.div`
-  .page {
-  }
-`;
+export interface IndexPageProps {
+  slug: string;
+}
 
-export function Index() {
+export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
+  const config = (await import('../../../stackbit.config').then(
+    (config) => config
+  )) as StackbitConfig;
+  const model = await resolveContent(config);
+  const props = await resolveStaticProps('/', model);
+  return { props };
+};
+
+export default function IndexPage(props: IndexPageProps) {
+  console.log('IndexPage(props)', props);
   /*
    * Replace the elements below with your own.
    *
-   * Note: The corresponding styles are in the ./index.@emotion/styled file.
+   * Note: The corresponding styles are in the ./index.scss file.
    */
   return (
-    <StyledPage>
+    <div className={styles.page}>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -346,9 +358,9 @@ export function Index() {
               </summary>
               <pre>
                 <span># Generate UI lib</span>
-                nx g @nrwl/next:library ui
+                nx g @nx/next:library ui
                 <span># Add a component</span>
-                nx g @nrwl/next:component button --project=ui
+                nx g @nx/next:component button --project=ui
               </pre>
             </details>
             <details>
@@ -416,8 +428,6 @@ export function Index() {
           </p>
         </div>
       </div>
-    </StyledPage>
+    </div>
   );
 }
-
-export default Index;
