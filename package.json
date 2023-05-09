@@ -7,7 +7,8 @@
     "build": "nx run-many --all --target build --parallel",
     "test": "nx run-many --all --target test --parallel --coverage",
     "lint": "stackbit validate && nx run-many --all --target lint --parallel",
-    "serve": "nx run-many --all --target serve --parallel"
+    "serve": "nx run-many --all --target serve --parallel",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,9 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@jscutlery/semver": "^3.0.0",
     "@nx/cypress": "16.1.1",
     "@nx/eslint-plugin": "16.1.1",
     "@nx/jest": "16.1.1",
@@ -63,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^8.0.0",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
