@@ -1,6 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Slab:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-base;
+  }
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  h6 {
+    @apply break-words;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .wa-markdown {
+    @apply leading-relaxed;
+    a {
+      @apply underline transition duration-200 ease-in;
+    }
+    a:hover {
+      @apply text-primary;
+    }
+    b,
+    strong {
+      @apply font-bold;
+    }
+    em {
+      @apply italic;
+    }
+    * + * {
+      margin-top: 1.5em;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 3.5rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    h1 + h2,
+    h2 + h3,
+    h3 + h4,
+    h4 + h5,
+    h5 + h6 {
+      margin-top: 1.5rem;
+    }
+    ol {
+      @apply list-decimal;
+      padding-left: 1.25em;
+    }
+    ul {
+      @apply list-disc;
+      padding-left: 1.25em;
+    }
+    li > ul,
+    li > ol {
+      margin: 0;
+    }
+    li + li {
+      margin-top: 0.5rem;
+    }
+    blockquote {
+      @apply border-l-4 border-current;
+      font-size: 1.25em;
+      line-height: 1.4;
+      padding-left: 1.25em;
+      &:not(:first-child) {
+        margin-top: 2.5rem;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+    pre {
+      @apply border border-current overflow-x-auto leading-normal;
+      padding: 1.25em;
+    }
+    hr {
+      @apply bg-current border-0 h-px;
+      &:not(:first-child) {
+        margin-top: 2.5rem;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+    figcaption {
+      @apply leading-normal;
+      font-size: 0.875em;
+      margin: 0.5rem 0 0;
+    }
+    table {
+      @apply border border-current border-collapse text-left w-full;
+    }
+    caption {
+      @apply text-left;
+      font-size: 0.875em;
+      margin: 0 0 0.5rem;
+    }
+    th,
+    td {
+      @apply border-r border-b border-current;
+      padding: 0.5em;
+    }
+    th {
+      font-weight: bold;
+    }
+  }
+
+  /* Buttons */
+  .wa-component-button {
+    @apply inline-flex justify-center items-center text-center border transition duration-200 ease-in hover:-translate-y-1;
+  }
+
+  /* Links */
+  .wa-component-link {
+    @apply inline-flex justify-center items-center text-center transition duration-200 ease-linear;
+  }
+  .wa-component-link-primary {
+    @apply text-primary hover:underline;
+  }
+  .wa-component-link-secondary {
+    @apply text-current hover:text-primary;
+  }
+
+  /* Form controls */
+  option {
+    color: initial;
+  }
+  .wa-checkbox:checked + .wa-label:before {
+    content: '\2713';
+  }
+
+  /* Image gallery */
+  .wa-image-strip-track {
+    min-width: 160rem;
+  }
+  .wa-image-strip-content {
+    min-width: 80rem;
+  }
+
+  /* Carousel */
+  .wa-carousel-dot {
+    @apply w-4 h-4 cursor-pointer;
+  }
+
+  .wa-carousel-tab-title {
+    @apply cursor-pointer opacity-40 max-w-xs;
+    display: -webkit-box;
+    line-height: 1.5;
+    max-height: 1.5em;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .wa-carousel-tab-title-active {
+    @apply opacity-100;
+  }
+
+  /* Color palettes */
+  .bg-light-fg-dark,
+  .wa-card.bg-light-fg-dark {
+    @apply text-dark bg-light;
+    .wa-input,
+    .wa-select,
+    .wa-textarea {
+      @apply placeholder-dark/50;
+    }
+    .wa-component-button-primary {
+      @apply bg-primary border-primary text-light;
+    }
+    .wa-component-button-secondary {
+      @apply border-dark text-dark;
+    }
+    .wa-image-strip-wrap {
+      &:before,
+      &:after {
+        @apply from-transparent to-light;
+      }
+    }
+    .wa-divider,
+    .wa-footer-bottom {
+      @apply border-neutral;
+    }
+    .wa-carousel-prev,
+    .wa-carousel-next {
+      @apply bg-dark text-light;
+    }
+    .wa-carousel-dot {
+      @apply bg-dark/20;
+    }
+    .wa-carousel-dot-active {
+      @apply bg-dark;
+    }
+  }
+  .bg-neutral-fg-dark,
+  .wa-card.bg-neutral-fg-dark {
+    @apply text-dark bg-neutral;
+    .wa-input,
+    .wa-select,
+    .wa-textarea {
+      @apply placeholder-dark/50;
+    }
+    .wa-component-button-primary {
+      @apply bg-primary border-primary text-light;
+    }
+    .wa-component-button-secondary {
+      @apply border-dark text-dark;
+    }
+    .wa-image-strip-wrap {
+      &:before,
+      &:after {
+        @apply from-transparent to-neutral;
+      }
+    }
+    .wa-divider,
+    .wa-footer-bottom {
+      @apply border-neutralAlt;
+    }
+    .wa-carousel-prev,
+    .wa-carousel-next {
+      @apply bg-dark text-light;
+    }
+    .wa-carousel-dot {
+      @apply bg-dark/20;
+    }
+    .wa-carousel-dot-active {
+      @apply bg-dark;
+    }
+  }
+  .bg-dark-fg-light,
+  .wa-card.bg-dark-fg-light {
+    @apply text-light bg-dark;
+    .wa-input,
+    .wa-select,
+    .wa-textarea {
+      @apply placeholder-light/50;
+    }
+    .wa-component-button-primary {
+      @apply bg-primary border-primary text-light;
+    }
+    .wa-component-button-secondary {
+      @apply border-light text-light;
+    }
+    .wa-image-strip-wrap {
+      &:before,
+      &:after {
+        @apply from-transparent to-dark;
+      }
+    }
+    .wa-divider,
+    .wa-footer-bottom {
+      @apply border-light/20;
+    }
+    .wa-carousel-prev,
+    .wa-carousel-next {
+      @apply bg-light text-dark;
+    }
+    .wa-carousel-dot {
+      @apply bg-light/20;
+    }
+    .wa-carousel-dot-active {
+      @apply bg-light;
+    }
+  }
+  /* Only for cards */
+  .bg-neutralAlt-fg-dark {
+    @apply text-dark bg-neutralAlt;
+    .wa-component-button-primary {
+      @apply bg-primary border-primary text-light;
+    }
+    .wa-component-button-secondary {
+      @apply border-dark text-dark;
+    }
+  }
+}
+
+@layer utilities {
+  .underline-line-through {
+    text-decoration-line: underline line-through;
+  }
+  .wa-animate-slide-left {
+    animation-name: slideLeft;
+    animation-duration: var(--wa-slide-speed, 80s);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes slideLeft {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .wa-animate-slide-right {
+    animation-name: slideRight;
+    animation-duration: var(--wa-slide-speed, 80s);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes slideRight {
+    from {
+      transform: translate3d(-50%, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
