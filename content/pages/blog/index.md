@@ -1,6 +1,7 @@
 ---
 title: Blog
 slug: /blog
+type: PostFeedLayout
 numOfPostsPerPage: 12
 enableSearch: true
 topSections:
