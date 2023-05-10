@@ -1,4 +1,16 @@
-import { IModel, IPageModel, PostPageProps } from '@watheia/cabbage.model';
+import { IModel, IPageModel, PostPageProps } from './types/content';
+
+export function getPageUrl(page: IPageModel): string {
+  if (!page || !page.slug) {
+    throw new Error(`Failed to get slug value from ${page}`);
+  }
+
+  if (['PostLayout'].includes(page.__metadata?.modelName ?? '')) {
+    return `/blog${page.slug.startsWith('/') ? page.slug : `/${page.slug}`}`;
+  }
+
+  return page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
+}
 
 export function getAllPostsSorted(objects: IPageModel[]) {
   const allPosts = getAllPosts(objects);
@@ -200,12 +212,12 @@ export function generatePagedPathsForPage(
   items: unknown[],
   numOfItemsPerPage: number
 ) {
-  const pageUrlPath = page.__metadata.urlPath;
+  const pageUrlPath = page.__metadata.urlPath!;
   if (numOfItemsPerPage === 0) {
     return [pageUrlPath];
   }
   const numOfPages = Math.ceil(items.length / numOfItemsPerPage) || 1;
-  const paths = [];
+  const paths: string[] = [];
   for (let i = 0; i < numOfPages; i++) {
     paths.push(i === 0 ? pageUrlPath : `${pageUrlPath}/page/${i + 1}`);
   }

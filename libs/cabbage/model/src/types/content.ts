@@ -1,4 +1,4 @@
-export type IDocumentModel = SiteModel | IPageModel;
+export type IDocumentModel = ConfigProps | IPageModel;
 
 export type IModel =
   | ButtonProps
@@ -16,17 +16,17 @@ export type IModel =
   | PostFeedPageProps
   | PostPageProps
   | RecentPostsSectionProps
-  | SiteModel;
+  | ConfigProps;
 
 // export type ModelAlias = IModel['type'];
 
 // export type Metadata = { id?: string; modelName: IModel['type'] };
 
 /** Document types */
-export type SiteModel = {
+export type ConfigProps = {
   __metadata: { id?: string; modelName: 'Config' };
   type: 'Config';
-  [x: string]: any;
+  // [x: string]: any;
 };
 
 // Pages

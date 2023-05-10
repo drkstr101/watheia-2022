@@ -3,12 +3,9 @@ import models, {
   ContentOptions,
   IModel,
   IPageModel,
-} from '@watheia/cabbage.model';
-import {
   getPageUrl,
-  readContentFile,
-  syncContentFiles,
-} from '@watheia/cabbage.utils';
+} from '@watheia/cabbage.model';
+import { readContentFile, syncContentFiles } from '@watheia/cabbage.utils';
 import { resolve } from 'path';
 
 const allReferenceFields: Record<string, any> = {};

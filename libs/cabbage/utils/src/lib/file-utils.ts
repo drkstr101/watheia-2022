@@ -27,7 +27,7 @@ export async function readContentFile(
   filePath: string,
   baseDir = ''
 ): Promise<IModel> {
-  let content = null;
+  let content: any = null;
   switch (extname(filePath).substring(1)) {
     case 'md':
       content = await readMarkdownFile(filePath);

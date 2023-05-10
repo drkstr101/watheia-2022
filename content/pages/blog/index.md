@@ -1,6 +1,7 @@
 ---
 title: Blog
 slug: /blog
+type: PostFeedLayout
 numOfPostsPerPage: 12
 enableSearch: true
 topSections:
@@ -10,7 +11,7 @@ topSections:
       type: TitleBlock
     subtitle: This is the subtitle
     posts:
-      - content/pages/blog/top-ten-lessons-we-learned.md
+      - blog/top-ten-lessons-we-learned.md
     showThumbnail: true
     showExcerpt: true
     showDate: true
