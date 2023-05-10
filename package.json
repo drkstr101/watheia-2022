@@ -94,6 +94,7 @@
     "nx-cloud": "latest",
     "nx-stylelint": "^15.0.0",
     "postcss": "8.4.21",
+    "postcss-import": "^15.1.0",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "sass": "1.61.0",
