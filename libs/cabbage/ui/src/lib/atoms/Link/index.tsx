@@ -1,4 +1,3 @@
-import * as React from 'react';
 import NextLink from 'next/link';
 
 export default function Link({ children, href, ...other }) {
@@ -6,7 +5,7 @@ export default function Link({ children, href, ...other }) {
   const internal = /^\/(?!\/)/.test(href);
   if (internal) {
     return (
-      <NextLink href={href}>
+      <NextLink href={href} legacyBehavior passHref>
         <a {...other}>{children}</a>
       </NextLink>
     );

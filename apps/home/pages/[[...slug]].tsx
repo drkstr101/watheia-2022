@@ -24,10 +24,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const config = await getConfig();
   const model = await resolveContent(config);
-  const props = await resolveStaticProps('/', model);
+  const urlPath =
+    '/' +
+    (typeof params?.slug === 'string'
+      ? params.slug
+      : (params?.slug ?? []).join('/'));
+  const props = await resolveStaticProps(urlPath, model);
   return { props };
 };
 
