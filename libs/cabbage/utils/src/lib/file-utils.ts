@@ -1,10 +1,7 @@
-import { IModel } from '@watheia/cabbage.model';
-import * as glob from 'fast-glob';
+import { sync } from 'fast-glob';
 import { existsSync, readFileSync } from 'fs';
-import * as matter from 'gray-matter';
-import { extname } from 'path';
-
-const supportedFileTypes = ['md', 'json'];
+import { read } from 'gray-matter';
+import { join, posix, win32 } from 'path';
 
 export async function readMarkdownFile(filePath: string): Promise<{
   content: string;
@@ -14,21 +11,21 @@ export async function readMarkdownFile(filePath: string): Promise<{
     throw new Error(`Could not read markdown from ${filePath}`);
   }
 
-  const { data, content } = await matter.read(filePath);
+  const { data, content } = await read(filePath);
   return { ...data, content };
 }
 
-export function syncContentFiles(dirPath: string) {
-  const globPattern = `${dirPath}/**/*.{${supportedFileTypes.join(',')}}`;
-  return glob.sync(globPattern);
+export function syncContentFiles(dirPath: string, supportedFileTypes = ['md', 'json']) {
+  const globPattern = `**/*.{${supportedFileTypes.join(',')}}`;
+  return sync(globPattern, { cwd: dirPath }).map((f) => join(dirPath, f));
 }
 
-export async function readContentFile(
+export async function readContentFile<T = Record<string, any>>(
   filePath: string,
   baseDir = ''
-): Promise<IModel> {
+): Promise<T> {
   let content: any = null;
-  switch (extname(filePath).substring(1)) {
+  switch (posix.extname(filePath).substring(1)) {
     case 'md':
       content = await readMarkdownFile(filePath);
       break;
@@ -42,7 +39,13 @@ export async function readContentFile(
   // Make Sourcebit-compatible
   content.__metadata = {
     // strip the entire length of baseDir plus leading '/'
-    id: filePath.substring(baseDir.length + 1),
+    // and ensure a normalized posix path
+    id: posix.normalize(
+      filePath
+        .substring(baseDir.length + 1)
+        .split(win32.sep)
+        .join(posix.sep)
+    ),
     modelName: content.type,
   };
 

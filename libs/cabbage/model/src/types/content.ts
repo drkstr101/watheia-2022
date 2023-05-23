@@ -154,3 +154,12 @@ export type FormBlockProps = {
   type: 'FormBlock';
   destination?: string;
 };
+
+export type PersonProps = {
+  __metadata: { id?: string; modelName: 'Person' };
+  type: 'Person';
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+};
