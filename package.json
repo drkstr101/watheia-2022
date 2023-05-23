@@ -91,7 +91,7 @@
     "jest-environment-node": "^29.4.1",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "16.1.1",
-    "nx-cloud": "latest",
+    "nx-cloud": "^16.0.5",
     "nx-stylelint": "^15.0.0",
     "postcss": "8.4.21",
     "postcss-import": "^15.1.0",

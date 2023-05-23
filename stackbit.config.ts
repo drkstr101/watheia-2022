@@ -7,7 +7,7 @@ export default defineStackbitConfig({
   cmsName: 'git',
   nodeVersion: '18',
   buildCommand: 'nx build home',
-  devCommand: 'nx serve home',
+  devCommand: 'nx serve home --port {PORT}',
   models: model,
   pagesDir: 'content/pages',
   dataDir: 'content/data',
