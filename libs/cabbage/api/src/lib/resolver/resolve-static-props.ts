@@ -21,7 +21,7 @@ import { createHash } from 'crypto';
 import { SignJWT } from 'jose';
 
 export function resolveStaticProps(urlPath: string, data: ContentModel) {
-  console.log('resolveStaticProps(urlPath, data)', urlPath, data);
+  // console.log('resolveStaticProps(urlPath, data)', urlPath, data);
 
   // get root path of paged path: /blog/page/2 => /blog
   const rootUrlPath = getRootPagePath(urlPath);

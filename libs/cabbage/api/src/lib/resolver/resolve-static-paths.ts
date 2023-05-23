@@ -11,7 +11,7 @@ import {
 } from '@watheia/cabbage.model';
 
 export function resolveStaticPaths({ pages, objects }: ContentModel): string[] {
-  console.log('resolveStaticPaths(data)', { pages, objects });
+  // console.log('resolveStaticPaths(data)', { pages, objects });
 
   const paths = pages.reduce((paths, page) => {
     if (!process.env['stackbitPreview'] && page.isDraft) {
