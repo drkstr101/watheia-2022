@@ -62,19 +62,19 @@
   "socialLinks": [
     {
       "altText": "GitHub link",
-      "url": "https://github.com/stackbit",
+      "url": "https://github.com/watheia",
       "icon": "github",
       "type": "Social"
     },
     {
       "altText": "Twitter link",
-      "url": "https://twitter.com/stackbit",
+      "url": "https://twitter.com/watheia",
       "icon": "twitter",
       "type": "Social"
     },
     {
       "altText": "LinkedIn link",
-      "url": "https://www.linkedin.com/company/stackbit",
+      "url": "https://www.linkedin.com/company/watheia",
       "icon": "linkedin",
       "type": "Social"
     },
@@ -103,7 +103,7 @@
       "type": "Link"
     }
   ],
-  "copyrightText": "Powered by [Stackbit](https://www.stackbit.com/)",
+  "copyrightText": "© 2023 - Watheia Labs, LLC",
   "colors": "bg-dark-fg-light",
   "type": "Footer"
 }

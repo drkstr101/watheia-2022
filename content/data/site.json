@@ -1,7 +1,7 @@
 {
   "favicon": "/images/favicon.svg",
   "footer": "footer.json",
-  "titleSuffix": "Theme Demo",
+  "titleSuffix": "Watheia Labs",
   "defaultSocialImage": "/images/main-hero.svg",
   "type": "Config",
   "header": "header.json"

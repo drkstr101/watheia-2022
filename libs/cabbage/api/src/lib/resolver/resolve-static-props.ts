@@ -21,6 +21,8 @@ import { createHash } from 'crypto';
 import { SignJWT } from 'jose';
 
 export function resolveStaticProps(urlPath: string, data: ContentModel) {
+  // console.log('resolveStaticProps(urlPath, data)', urlPath, data);
+
   // get root path of paged path: /blog/page/2 => /blog
   const rootUrlPath = getRootPagePath(urlPath);
   const { __metadata, ...rest } =
@@ -39,8 +41,7 @@ export function resolveStaticProps(urlPath: string, data: ContentModel) {
   return mapDeepAsync(
     props,
     async (value, keyPath, stack) => {
-      const objectType: keyof typeof StaticPropsResolvers =
-        value?.__metadata?.modelName;
+      const objectType: keyof typeof StaticPropsResolvers = value?.__metadata?.modelName;
       if (objectType && StaticPropsResolvers[objectType]) {
         const resolver = StaticPropsResolvers[objectType];
         return resolver(value, data, { keyPath, stack });
@@ -52,17 +53,8 @@ export function resolveStaticProps(urlPath: string, data: ContentModel) {
 }
 
 const StaticPropsResolvers = {
-  PostLayout: (
-    props: PostPageProps,
-    data: ContentModel,
-    debugContext: DebugContext
-  ) => {
-    return resolveReferences(
-      props,
-      ['author', 'category'],
-      data.objects,
-      debugContext
-    );
+  PostLayout: (props: PostPageProps, data: ContentModel, debugContext: DebugContext) => {
+    return resolveReferences(props, ['author', 'category'], data.objects, debugContext);
   },
   PostFeedLayout: (props: PostFeedPageProps, data: ContentModel) => {
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
@@ -70,45 +62,23 @@ const StaticPropsResolvers = {
     if (!process.env['stackbitPreview']) {
       allPosts = allPosts.filter(isPublished);
     }
-    const paginationData = getPagedItemsForPage(
-      props,
-      allPosts,
-      numOfPostsPerPage
-    );
-    const items = resolveReferences(
-      paginationData.items,
-      ['author', 'category'],
-      data.objects
-    );
+    const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
+    const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
     return {
       ...props,
       ...paginationData,
       items,
     };
   },
-  PostFeedCategoryLayout: (
-    props: PostFeedCategoryPageProps,
-    data: ContentModel
-  ) => {
+  PostFeedCategoryLayout: (props: PostFeedCategoryPageProps, data: ContentModel) => {
     const categoryId = props.__metadata?.id;
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
-    let allCategoryPosts = getAllCategoryPostsSorted(
-      data.objects,
-      categoryId ?? ''
-    );
+    let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId ?? '');
     if (!process.env['stackbitPreview']) {
       allCategoryPosts = allCategoryPosts.filter(isPublished);
     }
-    const paginationData = getPagedItemsForPage(
-      props,
-      allCategoryPosts,
-      numOfPostsPerPage
-    );
-    const items = resolveReferences(
-      paginationData.items,
-      ['author', 'category'],
-      data.objects
-    );
+    const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
+    const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
     return {
       ...props,
       ...paginationData,
@@ -121,11 +91,7 @@ const StaticPropsResolvers = {
       allPosts = allPosts.filter(isPublished);
     }
     allPosts = allPosts.slice(0, props.recentCount || 6);
-    const recentPosts = resolveReferences(
-      allPosts,
-      ['author', 'category'],
-      data.objects
-    );
+    const recentPosts = resolveReferences(allPosts, ['author', 'category'], data.objects);
     return {
       ...props,
       posts: recentPosts,

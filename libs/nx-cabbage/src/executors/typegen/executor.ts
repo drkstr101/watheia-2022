@@ -16,23 +16,35 @@ export default async function runExecutor(options: TypegenExecutorSchema) {
   console.log('Executor ran for Typegen', options);
 
   const entries = Object.entries(model).reduce((acc, [key, model]) => {
-    // create type property
-    const type = factory.createPropertySignature(
-      undefined,
-      factory.createIdentifier('type'),
-      undefined,
-      factory.createLiteralTypeNode(factory.createStringLiteral(key))
-      // factory.createKeywordTypeNode(SyntaxKind.NumberKeyword)
-    );
+    const typeAlias = `${key}Props`;
+
+    // create type attributes
+    const attributes = [
+      factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier('type'),
+        undefined,
+        factory.createLiteralTypeNode(factory.createStringLiteral(key))
+      ),
+      ...model.fields.map((field) => {
+        return factory.createPropertySignature(
+          undefined,
+          factory.createIdentifier(field.name),
+          undefined,
+          // TODO how to create any type?
+          factory.createLiteralTypeNode(factory.createStringLiteral('any'))
+        );
+      }),
+    ];
 
     // create User type
     return [
       ...acc,
       factory.createTypeAliasDeclaration(
         [factory.createModifier(SyntaxKind.ExportKeyword)],
-        factory.createIdentifier(key),
+        factory.createIdentifier(typeAlias),
         undefined,
-        factory.createTypeLiteralNode([type])
+        factory.createTypeLiteralNode(attributes)
       ),
     ];
     // return [...acc, model];
@@ -50,11 +62,7 @@ export default async function runExecutor(options: TypegenExecutorSchema) {
 
   writeFileSync(
     options.output,
-    printer.printList(
-      ListFormat.MultiLine,
-      factory.createNodeArray(entries),
-      sourceFile
-    )
+    printer.printList(ListFormat.MultiLine, factory.createNodeArray(entries), sourceFile)
   );
 
   return {

@@ -1,10 +1,5 @@
-import models, {
-  ContentModel,
-  ContentOptions,
-  IModel,
-  IPageModel,
-  getPageUrl,
-} from '@watheia/cabbage.model';
+import { StackbitConfig } from '@stackbit/types';
+import models, { ContentModel, IModel, IPageModel, getPageUrl } from '@watheia/cabbage.model';
 import { readContentFile, syncContentFiles } from '@watheia/cabbage.utils';
 import { resolve } from 'path';
 
@@ -25,10 +20,7 @@ function isRefField(modelName: string, fieldName: string) {
   return !!allReferenceFields[modelName + ':' + fieldName];
 }
 
-function resolveReferences(
-  content: IModel,
-  fileToContent: Record<string, any>
-) {
+function resolveReferences(content: IModel, fileToContent: Record<string, any>) {
   if (!content || !content.type) return;
 
   const modelName = content.type;
@@ -65,9 +57,7 @@ function resolveReferences(
   }
 }
 
-export async function resolveContent(
-  config: ContentOptions
-): Promise<ContentModel> {
+export async function resolveContent(config: StackbitConfig): Promise<ContentModel> {
   const pagesDir = resolve(config.pagesDir ?? 'content/pages');
   const dataDir = resolve(config.dataDir ?? 'content/data');
 
@@ -81,9 +71,7 @@ export async function resolveContent(
 
   const objects = [...pages, ...data];
 
-  const fileToContent = Object.fromEntries(
-    objects.map((o) => [o.__metadata.id, o])
-  );
+  const fileToContent = Object.fromEntries(objects.map((o) => [o.__metadata.id, o]));
 
   objects.forEach((o) => resolveReferences(o, fileToContent));
 
@@ -91,8 +79,6 @@ export async function resolveContent(
     page.__metadata.urlPath = getPageUrl(page);
   });
 
-  const siteConfig = data.find(
-    (e) => e.__metadata.modelName === models.Config.name
-  );
+  const siteConfig = data.find((e) => e.__metadata.modelName === models.Config.name);
   return { config, objects, pages, props: { site: siteConfig } };
 }

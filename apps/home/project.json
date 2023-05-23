@@ -69,6 +69,14 @@
       "options": {
         "preset": "conventional"
       }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/.cache/**/*"],
+      "options": {
+        "commands": ["nx serve home", "stackbit dev --port 4200"],
+        "parallel": true
+      }
     }
   },
   "tags": []

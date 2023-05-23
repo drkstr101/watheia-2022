@@ -24,25 +24,17 @@
       "inputs": ["default", "^production"]
     },
     "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore"
-      ]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/.eslintignore"]
     },
     "stylelint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"
-      ]
+      "inputs": ["default", "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"]
     }
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e", "stylelint"],
-        "accessToken": "ZjYyNTRkNTktZTc3YS00ZThiLWI3MTAtYmEwNjNiYzI2YjNlfHJlYWQtd3JpdGU="
+        "accessToken": "YmU0MTc5YTItMDk0Ni00NGUwLTlhODctMTczOWI1MWRiYmUzfHJlYWQtd3JpdGU="
       }
     }
   },

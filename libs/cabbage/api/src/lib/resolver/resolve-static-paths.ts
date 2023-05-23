@@ -11,6 +11,8 @@ import {
 } from '@watheia/cabbage.model';
 
 export function resolveStaticPaths({ pages, objects }: ContentModel): string[] {
+  // console.log('resolveStaticPaths(data)', { pages, objects });
+
   const paths = pages.reduce((paths, page) => {
     if (!process.env['stackbitPreview'] && page.isDraft) {
       return paths;
@@ -37,18 +39,13 @@ const StaticPathsResolvers: Record<string, any> = {
     if (!process.env['stackbitPreview']) {
       posts = posts.filter(isPublished);
     }
-    const numOfPostsPerPage =
-      (page as PostFeedPageProps).numOfPostsPerPage ?? 10;
+    const numOfPostsPerPage = (page as PostFeedPageProps).numOfPostsPerPage ?? 10;
     return generatePagedPathsForPage(page, posts, numOfPostsPerPage);
   },
   PostFeedCategoryLayout: (page: IPageModel, objects: IModel[]) => {
     const categoryId = page.__metadata.id;
-    const numOfPostsPerPage =
-      (page as PostFeedCategoryPageProps).numOfPostsPerPage ?? 10;
-    let categoryPosts = getAllCategoryPostsSorted(
-      objects as IPageModel[],
-      categoryId ?? ''
-    );
+    const numOfPostsPerPage = (page as PostFeedCategoryPageProps).numOfPostsPerPage ?? 10;
+    let categoryPosts = getAllCategoryPostsSorted(objects as IPageModel[], categoryId ?? '');
     if (!process.env['stackbitPreview']) {
       categoryPosts = categoryPosts.filter(isPublished);
     }

@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - alpha
+      - preview
   pull_request:
 
 jobs:
