@@ -5,50 +5,27 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "outputPath": "dist/apps/design-system"
+        "outputDir": "dist/apps/design-system",
+        "configDir": "apps/design-system/.storybook"
       },
       "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
+        "ci": {
+          "quiet": true
         }
       }
     },
     "serve": {
-      "executor": "@nx/vite:dev-server",
-      "defaultConfiguration": "development",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "buildTarget": "design-system:build"
+        "port": 4300,
+        "configDir": "apps/design-system/.storybook"
       },
       "configurations": {
-        "development": {
-          "buildTarget": "design-system:build:development",
-          "hmr": true
-        },
-        "production": {
-          "buildTarget": "design-system:build:production",
-          "hmr": false
-        }
-      }
-    },
-    "preview": {
-      "executor": "@nx/vite:preview-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "design-system:build"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "design-system:build:development"
-        },
-        "production": {
-          "buildTarget": "design-system:build:production"
+        "ci": {
+          "quiet": true
         }
       }
     },
@@ -70,7 +47,13 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "design-system:build"
+        "buildTarget": "design-system:build",
+        "staticFilePath": "dist/apps/design-system"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "design-system:build:ci"
+        }
       }
     }
   },
