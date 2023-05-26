@@ -1,7 +1,7 @@
 import './theme/styles/index.css';
 
 export { Button } from './atoms/button';
-export type { ButtonProps, ButtonTheme } from './atoms/button';
+export type { ButtonProps } from './atoms/button';
 export { Heading } from './atoms/heading';
 export type { HeadingProps } from './atoms/heading';
 export { Icon } from './atoms/icon';

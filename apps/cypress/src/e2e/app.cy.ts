@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('design-system', () => {
+describe('home', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('design-system', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome design-system');
+    getGreeting().contains('Welcome Watheia Labs');
   });
 });
