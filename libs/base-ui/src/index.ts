@@ -2,6 +2,8 @@ import './theme/styles/index.css';
 
 export { Button } from './atoms/button';
 export type { ButtonProps } from './atoms/button';
+export { Container } from './atoms/container';
+export type { ContainerProps } from './atoms/container';
 export { Heading } from './atoms/heading';
 export type { HeadingProps } from './atoms/heading';
 export { Icon } from './atoms/icon';

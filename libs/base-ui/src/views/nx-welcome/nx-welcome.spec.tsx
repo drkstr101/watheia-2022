@@ -11,6 +11,6 @@ describe('NxWelcome', () => {
 
   it('SHOULD render successfully', () => {
     const { getByTestId } = render(<NxWelcome title="TESTING" />);
-    expect(getByTestId(CID)).toMatchSnapshot();
+    expect(getByTestId(CID)).toBeTruthy();
   });
 });

@@ -4,7 +4,7 @@ import styles from './heading.module.css';
 
 /* eslint-disable-next-line */
 export interface HeadingProps extends HtmlHTMLAttributes<HTMLHeadingElement> {
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 }
 
 export function Heading({ className, children, variant: C = 'h1', ...props }: HeadingProps) {
