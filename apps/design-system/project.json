@@ -55,6 +55,12 @@
           "buildTarget": "design-system:build:ci"
         }
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": []

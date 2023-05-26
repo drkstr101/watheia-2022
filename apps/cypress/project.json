@@ -26,6 +26,12 @@
       "options": {
         "lintFilePatterns": ["apps/cypress/**/*.{js,ts}"]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": [],

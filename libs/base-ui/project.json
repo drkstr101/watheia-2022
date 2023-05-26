@@ -85,6 +85,12 @@
           "buildTarget": "base-ui:build-storybook:ci"
         }
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   }
 }
