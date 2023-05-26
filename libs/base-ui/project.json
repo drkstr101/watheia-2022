@@ -17,7 +17,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/base-ui"
+        "outputPath": "dist/libs/base-ui",
+        "assets": ["libs/base-ui/src/styles.css"]
       },
       "configurations": {
         "development": {
