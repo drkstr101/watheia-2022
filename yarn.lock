@@ -2156,7 +2156,7 @@
     tmp "~0.2.1"
     tslib "^2.3.0"
 
-"@nx/next@16.2.2", "@nx/next@^16.2.2":
+"@nx/next@16.2.2":
   version "16.2.2"
   resolved "https://registry.yarnpkg.com/@nx/next/-/next-16.2.2.tgz#52f43639b9b23f3c787f17870afcc0efa657a936"
   integrity sha512-vF6Fq/w8dNvDBDFy7wD1UDKpj8mJBkApP9+eIWLK/aWv1XNM4ZK9pEgfz5ZHAXRTja5g8AA8hwfxWCvvBIHX4w==
@@ -2244,7 +2244,7 @@
     file-loader "^6.2.0"
     minimatch "3.0.5"
 
-"@nx/storybook@16.2.2", "@nx/storybook@^16.2.2":
+"@nx/storybook@16.2.2":
   version "16.2.2"
   resolved "https://registry.yarnpkg.com/@nx/storybook/-/storybook-16.2.2.tgz#62d4624c73441cf8722254c6ce6d48852ec098a7"
   integrity sha512-4MZaLW81otbvSEJpp3k9MTYFz3yo8xvfJ3BiuOYJ4UreeTwf683MqV6/FL9vS2viY4UWQu/nR0ir4tOdf5h7Rw==
@@ -10505,7 +10505,7 @@ nwsapi@^2.2.2:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.4.tgz#fd59d5e904e8e1f03c25a7d5a15cfa16c714a1e5"
   integrity sha512-NHj4rzRo0tQdijE9ZqAx6kYDcoRwYwSYzCA8MY3JzfxlrvEU0jhnhJT9BhqhJs7I/dKcrDm6TyulaRqZPIhN5g==
 
-nx-cloud@16.0.5, nx-cloud@latest:
+nx-cloud@16.0.5:
   version "16.0.5"
   resolved "https://registry.yarnpkg.com/nx-cloud/-/nx-cloud-16.0.5.tgz#fa0b0185d254405ec47fcbcdbbd8b12ff1add096"
   integrity sha512-13P7r0aKikjBtmdZrNorwXzVPeVIV4MLEwqGY+DEG6doLBtI5KqEQk/d5B5l2dCF2BEi/LXEmLYCmf9gwbOJ+Q==
