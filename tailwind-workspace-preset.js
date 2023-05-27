@@ -34,7 +34,7 @@ module.exports = {
       },
       colors: ({ colors }) => ({
         primary: colors.cyan,
-        secondary: colors.blue,
+        secondary: colors.sky,
         accent: colors.teal,
         white: '#fafafa',
         black: '#0a0a0a',
