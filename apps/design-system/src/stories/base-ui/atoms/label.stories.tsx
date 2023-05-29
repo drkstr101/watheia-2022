@@ -3,7 +3,7 @@ import { Label } from '@watheia/base-ui';
 
 const Story: Meta<typeof Label> = {
   component: Label,
-  title: '@watheia/base-ui.atoms.label',
+  title: 'watheia.base-ui/atoms/label',
 };
 export default Story;
 

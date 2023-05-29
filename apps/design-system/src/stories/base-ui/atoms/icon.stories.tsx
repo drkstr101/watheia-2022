@@ -3,7 +3,7 @@ import { Icon } from '@watheia/base-ui';
 
 const Story: Meta<typeof Icon> = {
   component: Icon,
-  title: '@watheia/base-ui.atoms.icon',
+  title: 'watheia.base-ui/atoms/icon',
 };
 export default Story;
 

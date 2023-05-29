@@ -3,7 +3,7 @@ import { Text } from '@watheia/base-ui';
 
 const Story: Meta<typeof Text> = {
   component: Text,
-  title: '@watheia/base-ui.atoms.text',
+  title: 'watheia.base-ui/atoms/text',
 };
 export default Story;
 

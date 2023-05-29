@@ -3,7 +3,7 @@ import { Image } from '@watheia/base-ui';
 
 const Story: Meta<typeof Image> = {
   component: Image,
-  title: '@watheia/base-ui.atoms.image',
+  title: 'watheia.base-ui/atoms/image',
 };
 export default Story;
 

@@ -23,4 +23,12 @@
   min-height: 100%;
 }
 
+html {
+  @apply h-full bg-neutral-50 antialiased;
+}
+
+body {
+  @apply flex h-full flex-col;
+}
+
 /* You can add global styles to this file, and also import other style files */

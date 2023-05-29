@@ -3,7 +3,7 @@ import { Link } from '@watheia/base-ui';
 
 const Story: Meta<typeof Link> = {
   component: Link,
-  title: '@watheia/base-ui.atoms.link',
+  title: 'watheia.base-ui/atoms/link',
 };
 export default Story;
 

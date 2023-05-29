@@ -1,4 +1,4 @@
-import './theme/styles/index.css';
+import './theme/styles/global';
 
 export { Button } from './atoms/button';
 export type { ButtonProps } from './atoms/button';

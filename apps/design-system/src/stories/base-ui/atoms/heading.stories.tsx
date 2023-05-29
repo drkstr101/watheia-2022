@@ -3,7 +3,7 @@ import { Heading } from '@watheia/base-ui';
 
 const Story: Meta<typeof Heading> = {
   component: Heading,
-  title: '@watheia/base-ui.atoms.heading',
+  title: 'watheia.base-ui/atoms/heading',
 };
 export default Story;
 

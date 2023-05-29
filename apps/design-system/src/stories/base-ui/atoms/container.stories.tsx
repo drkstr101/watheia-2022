@@ -3,7 +3,7 @@ import { Container } from '@watheia/base-ui';
 
 const Story: Meta<typeof Container> = {
   component: Container,
-  title: '@watheia/base-ui.atoms.container',
+  title: 'watheia.base-ui/atoms/container',
 };
 export default Story;
 

@@ -1,0 +1,13 @@
+.detail {
+  &.light {
+    @apply text-base font-thin;
+  }
+
+  &.medium {
+    @apply text-base font-medium;
+  }
+
+  &.heavy {
+    @apply text-base font-bold;
+  }
+}
