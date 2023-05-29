@@ -6,7 +6,11 @@ import styles from './container.module.css';
 export interface ContainerProps extends HtmlHTMLAttributes<HTMLDivElement> {}
 
 export function Container({ children, className, ...props }: ContainerProps) {
-  return <div className={clsx(styles['container'], className)}>{children}</div>;
+  return (
+    <div className={clsx(styles['container'], className)} {...props}>
+      {children}
+    </div>
+  );
 }
 
 export default Container;

@@ -22,5 +22,21 @@ export { Section } from './molecules/section';
 export type { SectionProps } from './molecules/section';
 export { NavBar } from './organisms/nav-bar';
 export type { NavBarProps } from './organisms/nav-bar';
+export {
+  ThemeProvider,
+  useContextProps,
+  useEnterAnimation,
+  useExitAnimation,
+  useRenderProps,
+  useSlot,
+} from './utils/theme-provider';
+export type {
+  ContextValue,
+  DOMProps,
+  RenderProps,
+  SlotProps,
+  StyleProps,
+  StyleRenderProps,
+} from './utils/theme-provider';
 export { NxWelcome } from './views/nx-welcome';
 export type { NxWelcomeProps } from './views/nx-welcome';

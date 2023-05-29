@@ -1,20 +1,10 @@
 import type { Meta } from '@storybook/react';
-import { Button, ButtonProps } from '@watheia/base-ui';
-
-function Composition(props: ButtonProps) {
-  return (
-    <Button
-      className="rounded-md bg-primary-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
-      {...props}
-    >
-      Button label
-    </Button>
-  );
-}
+import { Button } from '@watheia/base-ui';
 
 const Story: Meta<typeof Button> = {
-  component: Composition,
+  component: Button,
   title: 'watheia.base-ui/atoms/button',
+  args: { children: 'Button label', color: 'neutral', variant: 'solid' },
 };
 export default Story;
 
