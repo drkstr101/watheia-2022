@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import 'focus-visible';
 import { AppProps } from 'next/app';
 import './styles.css';
 
