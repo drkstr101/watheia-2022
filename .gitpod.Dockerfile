@@ -22,4 +22,5 @@ USER gitpod
 # Setup dev env
 RUN npm install --global npm pnpm && \
   SHELL=bash npx @teambit/bvm@latest install && \
+  echo "\n" >> ${HOME}/.bashrc && \
   echo 'export PATH=$PATH:node_modules/.bin' >> ${HOME}/.bashrc
