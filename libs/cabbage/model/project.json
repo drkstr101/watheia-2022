@@ -1,0 +1,30 @@
+{
+  "name": "cabbage-model",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cabbage/model/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/cabbage/model",
+        "main": "libs/cabbage/model/src/index.ts",
+        "tsConfig": "libs/cabbage/model/tsconfig.lib.json",
+        "assets": ["libs/cabbage/model/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs waweb-model {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/cabbage/model/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

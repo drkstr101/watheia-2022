@@ -10,25 +10,15 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "ES2021",
-      "ES2021.Intl",
-      "DOM"
-    ],
+    "lib": ["ES2021", "ES2021.Intl", "DOM"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@watheia/base-ui": [
-        "libs/base-ui/src/index.ts"
-      ],
-      "@watheia/design.theme.styles.global": [
-        "libs/base-ui/src/theme/styles/global/index.ts"
-      ]
+      "@watheia/base-ui": ["libs/base-ui/src/index.ts"],
+      "@watheia/cabbage.model": ["libs/cabbage/model/src/index.ts"],
+      "@watheia/design.theme.styles.global": ["libs/base-ui/src/theme/styles/global/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
