@@ -11467,6 +11467,11 @@ neo-async@^2.6.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+next-seo@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-6.0.0.tgz#4568dc61a44dbdf5fe5ff44156cd0ff8804889a2"
+  integrity sha512-jKKt1p1z4otMA28AyeoAONixVjdYmgFCWwpEFtu+DwRHQDllVX3RjtyXbuCQiUZEfQ9rFPBpAI90vDeLZlMBdg==
+
 next@13.3.4:
   version "13.3.4"
   resolved "https://registry.yarnpkg.com/next/-/next-13.3.4.tgz#ce2d96053cabfca092cc829941efe5dfbe015d16"
@@ -11488,6 +11493,13 @@ next@13.3.4:
     "@next/swc-win32-arm64-msvc" "13.3.4"
     "@next/swc-win32-ia32-msvc" "13.3.4"
     "@next/swc-win32-x64-msvc" "13.3.4"
+
+nextjs-google-analytics@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/nextjs-google-analytics/-/nextjs-google-analytics-2.3.3.tgz#8393804b89915b22d94e0fabb786bdd4012cb888"
+  integrity sha512-Y6sI6A7wt5dji8hYBnVkOh9LTyImSLFZXx3FpyQgVW7W4b4qEFHjH2u3fhDJsrRZeLlUGM8/RuHD/mhHc2Axfg==
+  optionalDependencies:
+    fsevents "^2.3.2"
 
 node-addon-api@^3.2.1:
   version "3.2.1"
