@@ -5,7 +5,7 @@ import {
   LockClosedIcon,
   ServerIcon,
 } from '@heroicons/react/20/solid';
-import { Container, Heading } from '@watheia/base-ui';
+import { Container, Heading, Text } from '@watheia/base-ui';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { SVGProps } from 'react';
@@ -321,11 +321,11 @@ const Hero = () => (
           </div>
         </div>
         <Heading level={1}>We make technology easy</Heading>
-        <p className="mt-6 text-lg leading-8 text-neutral-600">
+        <Text className="mt-6 text-lg leading-8 text-neutral-600">
           Esse id magna consectetur fugiat non dolor in ad laboris magna laborum ea consequat.
           Nisi irure aliquip nisi adipisicing veniam voluptate id. In veniam incididunt ex
           veniam adipisicing sit.
-        </p>
+        </Text>
         <div className="mt-10 flex items-center gap-x-6">
           <a
             href="#"
