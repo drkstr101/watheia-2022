@@ -1,13 +1,15 @@
 .detail {
+  @apply text-base;
+
   &.light {
-    @apply text-base font-thin;
+    @apply font-thin;
   }
 
   &.medium {
-    @apply text-base font-medium;
+    @apply font-medium;
   }
 
   &.heavy {
-    @apply text-base font-bold;
+    @apply font-bold;
   }
 }
