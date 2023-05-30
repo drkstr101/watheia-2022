@@ -1,1 +1,1 @@
-import '../src/styles.css';
+import '@watheia/design.theme.styles.global';

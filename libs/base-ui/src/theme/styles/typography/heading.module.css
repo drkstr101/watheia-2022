@@ -1,13 +1,11 @@
-.heading {
-  &.light {
-    @apply text-base font-thin;
-  }
+.heading1 {
+  @apply text-4xl font-bold tracking-tight text-black mt-2 mb-4;
+}
 
-  &.medium {
-    @apply text-base font-medium;
-  }
+.heading2 {
+  @apply text-3xl font-medium tracking-tight;
+}
 
-  &.heavy {
-    @apply text-base font-bold;
-  }
+.heading3 {
+  @apply text-lg font-semibold leading-6 text-neutral-900;
 }

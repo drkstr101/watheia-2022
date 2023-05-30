@@ -5,14 +5,16 @@ import {
   LockClosedIcon,
   ServerIcon,
 } from '@heroicons/react/20/solid';
+import { Heading } from '@watheia/base-ui';
 import clsx from 'clsx';
+import Link from 'next/link';
 import { SVGProps } from 'react';
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
+  { name: 'Blog', href: '#' },
+  { name: 'Demo', href: '#' },
+  { name: 'Contact', href: '#' },
 ];
 const primaryFeatures = [
   {
@@ -213,29 +215,29 @@ export function Index() {
   return (
     <>
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="absolute inset-x-0 top-0 z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between p-6" aria-label="Global">
           <div className="flex">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="https://watheia.com/logo.png" alt="" />
-            </a>
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Watheia Labs</span>
+              <img className="h-12 w-auto" src="https://watheia.com/logo.png" alt="" />
+            </Link>
           </div>
           <div className="flex gap-x-6">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-sm font-semibold leading-6 text-neutral-900"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-neutral-900">
+            <Link href="/login" className="text-sm font-semibold leading-6 text-neutral-900">
               Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
@@ -288,9 +290,7 @@ export function Index() {
                   </a>
                 </div>
               </div>
-              <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-neutral-900">
-                Technology made easy
-              </h1>
+              <Heading level={1}>We make technology easy</Heading>
               <p className="mt-6 text-lg leading-8 text-neutral-600">
                 Esse id magna consectetur fugiat non dolor in ad laboris magna laborum ea
                 consequat. Nisi irure aliquip nisi adipisicing veniam voluptate id. In veniam
@@ -429,7 +429,7 @@ export function Index() {
               aria-hidden="true"
             >
               <div
-                className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-25"
+                className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#7dd3fc] to-[#0369a1] opacity-25"
                 style={{
                   clipPath:
                     'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -532,8 +532,8 @@ export function Index() {
                   gradientUnits="userSpaceOnUse"
                   gradientTransform="translate(512 512) rotate(90) scale(512)"
                 >
-                  <stop stopColor="#7775D6" />
-                  <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
+                  <stop stopColor="#7dd3fc" />
+                  <stop offset={1} stopColor="#0369a1" stopOpacity={0} />
                 </radialGradient>
               </defs>
             </svg>
@@ -577,7 +577,7 @@ export function Index() {
               aria-hidden="true"
             >
               <div
-                className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
+                className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#7dd3fc] to-[#0369a1]"
                 style={{
                   clipPath:
                     'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -589,7 +589,7 @@ export function Index() {
               aria-hidden="true"
             >
               <div
-                className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
+                className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#7dd3fc] to-[#0369a1] xl:ml-0 xl:mr-[calc(50%-12rem)]"
                 style={{
                   clipPath:
                     'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',

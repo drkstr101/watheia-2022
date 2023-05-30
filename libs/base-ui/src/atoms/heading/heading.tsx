@@ -1,18 +1,26 @@
 import clsx from 'clsx';
-import { HtmlHTMLAttributes } from 'react';
-import styles from './heading.module.css';
+import { ElementType, ForwardedRef, HTMLAttributes, createContext, forwardRef } from 'react';
+import { heading as styles } from '../../theme/styles/typography';
+import { ContextValue, useContextProps } from '../../utils/theme-provider';
 
-/* eslint-disable-next-line */
-export interface HeadingProps extends HtmlHTMLAttributes<HTMLHeadingElement> {
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+export interface HeadingProps extends HTMLAttributes<HTMLElement> {
+  level?: number;
 }
 
-export function Heading({ className, children, variant: C = 'h1', ...props }: HeadingProps) {
-  return (
-    <C className={clsx('wa-heading', styles['heading'], className)} {...props}>
-      {children}
-    </C>
-  );
-}
+export const HeadingContext = createContext<ContextValue<HeadingProps, HTMLHeadingElement>>({});
+
+export const Heading = forwardRef(
+  (props: HeadingProps, ref: ForwardedRef<HTMLHeadingElement>) => {
+    [props, ref] = useContextProps(props, ref, HeadingContext);
+    const { children, level = 3, className, ...domProps } = props;
+    const Element = `h${level}` as ElementType;
+
+    return (
+      <Element {...domProps} className={clsx(styles[`heading${level}`], className)}>
+        {children}
+      </Element>
+    );
+  }
+);
 
 export default Heading;

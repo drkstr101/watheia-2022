@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
+import '@watheia/design.theme.styles.global';
 import { AppProps } from 'next/app';
-import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

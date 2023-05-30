@@ -4,7 +4,7 @@ import Heading from './heading';
 
 describe('Heading', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Heading variant="h1" />);
+    const { baseElement } = render(<Heading>Hello, World!</Heading>);
     expect(baseElement).toBeTruthy();
   });
 });
