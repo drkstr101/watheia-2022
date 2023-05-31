@@ -1,0 +1,28 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": ["node", "vite/client"]
+  },
+  "files": [
+    "../../node_modules/@nx/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nx/react/typings/image.d.ts",
+    "src/lib/gfx/social-icon/YouTube.tsx",
+    "src/lib/gfx/social-icon/GitHub.tsx",
+    "src/lib/gfx/social-icon/Twitter.tsx",
+    "src/lib/gfx/social-icon/Instagram.tsx",
+    "src/lib/gfx/social-icon/Facebook.tsx",
+    "src/lib/gfx/social-icon/social-icon.types.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.test.tsx",
+    "**/*.spec.js",
+    "**/*.test.js",
+    "**/*.spec.jsx",
+    "**/*.test.jsx"
+  ],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+}
