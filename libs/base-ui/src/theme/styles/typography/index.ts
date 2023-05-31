@@ -1,5 +1,15 @@
-import body from './body.module.css';
-import detail from './detail.module.css';
-import heading from './heading.module.css';
+import styles from './typography.module.css';
 
-export { body, detail, heading };
+const { heading1, heading2, heading3, heading4, heading5, body1, body2, detail, code } = styles;
+
+export default {
+  heading1,
+  heading2,
+  heading3,
+  heading4,
+  heading5,
+  body1,
+  body2,
+  detail,
+  code,
+} as const;

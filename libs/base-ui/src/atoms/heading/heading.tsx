@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ElementType, ForwardedRef, HTMLAttributes, createContext, forwardRef } from 'react';
-import { heading as styles } from '../../theme/styles/typography';
+import styles from '../../theme/styles/typography';
 import { ContextValue, useContextProps } from '../../utils/theme-provider';
 
 export interface HeadingProps extends HTMLAttributes<HTMLElement> {
@@ -15,8 +15,9 @@ export const Heading = forwardRef(
     const { children, level = 3, className, ...domProps } = props;
     const Element = `h${level}` as ElementType;
 
+    const variant = `heading${level}` as keyof typeof styles;
     return (
-      <Element {...domProps} className={clsx(styles[`heading${level}`], className)}>
+      <Element {...domProps} className={clsx(styles[variant], className)}>
         {children}
       </Element>
     );

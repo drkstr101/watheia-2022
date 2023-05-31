@@ -17,7 +17,8 @@
     "paths": {
       "@watheia/base-ui": ["libs/base-ui/src/index.ts"],
       "@watheia/cabbage.model": ["libs/cabbage/model/src/index.ts"],
-      "@watheia/design.theme.styles.global": ["libs/base-ui/src/theme/styles/global/index.ts"]
+      "@watheia/design.theme.styles.global": ["libs/base-ui/src/theme/styles/global/index.ts"],
+      "@watheia/waweb-ui": ["libs/waweb-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

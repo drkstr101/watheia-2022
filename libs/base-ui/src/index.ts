@@ -22,6 +22,7 @@ export { Section } from './molecules/section';
 export type { SectionProps } from './molecules/section';
 export { NavBar } from './organisms/nav-bar';
 export type { NavBarProps } from './organisms/nav-bar';
+export { default as typography } from './theme/styles/typography';
 export {
   ThemeProvider,
   useContextProps,
