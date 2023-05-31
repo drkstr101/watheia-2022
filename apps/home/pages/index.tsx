@@ -847,7 +847,13 @@ const Footer = () => (
     </h2>
     <Container className="px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
       <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-        <img className="h-16" src="https://watheia.com/logo-alt.png" alt="Company name" />
+        <Image
+          src="/images/logo-alt.png"
+          alt="Watheia Labs"
+          width={301}
+          height={107}
+          quality={100}
+        />
         <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
           <div className="md:grid md:grid-cols-2 md:gap-8">
             <div>
