@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -40,7 +40,9 @@ module.exports = {
         black: '#0a0a0a',
       }),
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['Fira Sans', ...fontFamily.sans],
+        mono: ['Fira Code', ...fontFamily.mono],
+        condensed: ['Fira Sans Condensed', ...fontFamily.sans],
       },
       keyframes: {
         'fade-in': {
