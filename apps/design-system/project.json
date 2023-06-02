@@ -1,22 +1,9 @@
 {
   "name": "design-system",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/design-system/src",
+  "sourceRoot": "apps/design-system",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/apps/design-system",
-        "configDir": "apps/design-system/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
     "serve": {
       "executor": "@nx/storybook:storybook",
       "options": {
@@ -29,12 +16,29 @@
         }
       }
     },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/design-system"],
+    "serve-static": {
+      "executor": "@nx/web:file-server",
       "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/design-system"
+        "buildTarget": "design-system:build",
+        "staticFilePath": "dist/storybook/design-system"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "design-system:build:ci"
+        }
+      }
+    },
+    "build": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/design-system",
+        "configDir": "apps/design-system/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     },
     "lint": {
@@ -44,22 +48,37 @@
         "lintFilePatterns": ["apps/design-system/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
+    "build-preview": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "design-system:build",
-        "staticFilePath": "dist/apps/design-system"
+        "root": "apps/design-system",
+        "outputPath": "dist/apps/design-system"
       },
       "configurations": {
-        "ci": {
-          "buildTarget": "design-system:build:ci"
-        }
+        "development": {
+          "outputPath": "apps/design-system"
+        },
+        "production": {}
       }
     },
-    "version": {
-      "executor": "@jscutlery/semver:version",
+    "preview": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
       "options": {
-        "preset": "conventional"
+        "buildTarget": "design-system:build-preview",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "design-system:build-preview:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "design-system:build-preview:production",
+          "dev": false
+        }
       }
     }
   },
