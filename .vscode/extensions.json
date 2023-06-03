@@ -9,6 +9,7 @@
     "csstools.postcss",
     "stylelint.vscode-stylelint",
     "bradlc.vscode-tailwindcss",
-    "hbenl.vscode-test-explorer"
+    "hbenl.vscode-test-explorer",
+    "unifiedjs.vscode-mdx"
   ]
 }

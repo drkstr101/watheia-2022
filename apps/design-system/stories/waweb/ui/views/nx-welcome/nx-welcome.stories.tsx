@@ -3,7 +3,7 @@ import { NxWelcome } from '@watheia/base-ui';
 
 const Story: Meta<typeof NxWelcome> = {
   component: NxWelcome,
-  title: 'watheia.waweb/views/nx-welcome',
+  title: 'watheia.waweb/ui/views/nx-welcome',
 };
 export default Story;
 
