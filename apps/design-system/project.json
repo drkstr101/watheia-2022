@@ -20,7 +20,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "design-system:build",
-        "staticFilePath": "dist/storybook/design-system"
+        "staticFilePath": "dist/apps/design-system"
       },
       "configurations": {
         "ci": {
@@ -32,7 +32,7 @@
       "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/design-system",
+        "outputDir": "dist/apps/design-system",
         "configDir": "apps/design-system/.storybook"
       },
       "configurations": {
