@@ -10,7 +10,7 @@ function MyComposition() {
   return (
     <div>
       {[1, 2, 3, 4, 5, 6].map((level) => (
-        <Item level={level} />
+        <Item key={level} level={level} />
       ))}
     </div>
   );
