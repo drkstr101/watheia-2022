@@ -14,7 +14,7 @@ function Panel({ title, children }: { title: string; children?: ReactNode }) {
 function Composition() {
   return (
     <>
-      <h1 className="text-base font-extrabold p-2 pb-4">Typography Styles</h1>
+      <h1 className="text-base font-bold p-2 pb-4">Typography Styles</h1>
       <div className="space-y-6">
         <Panel title="Heading">
           <h1 className={typography.heading1}>

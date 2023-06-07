@@ -5,6 +5,7 @@ import { ContextValue, useContextProps } from '../../utils/theme-provider';
 
 export interface HeadingProps extends HTMLAttributes<HTMLElement> {
   level?: number;
+  weight?: 'light' | 'regular' | 'heavy';
 }
 
 export const HeadingContext = createContext<ContextValue<HeadingProps, HTMLHeadingElement>>({});
@@ -12,12 +13,12 @@ export const HeadingContext = createContext<ContextValue<HeadingProps, HTMLHeadi
 export const Heading = forwardRef(
   (props: HeadingProps, ref: ForwardedRef<HTMLHeadingElement>) => {
     [props, ref] = useContextProps(props, ref, HeadingContext);
-    const { children, level = 3, className, ...domProps } = props;
+    const { children, level = 3, weight = 'regular', className, ...domProps } = props;
     const Element = `h${level}` as ElementType;
 
     const variant = `heading${level}` as keyof typeof styles;
     return (
-      <Element {...domProps} className={clsx(styles[variant], className)}>
+      <Element {...domProps} className={clsx(styles[variant], styles[weight], className)}>
         {children}
       </Element>
     );

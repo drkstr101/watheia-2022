@@ -1,5 +1,19 @@
 .heading1 {
-  @apply font-sans text-5xl font-black text-black mt-2 mb-4;
+  &.regular {
+    @apply font-bold font-sans text-5xl text-black mt-2 mb-4;
+  }
+
+  &.light {
+    @apply font-light font-sans text-5xl text-black mt-2 mb-4;
+  }
+
+  &.heavy {
+    @apply font-black font-sans text-5xl text-black mt-2 mb-4;
+
+    strong {
+      @apply text-accent-500;
+    }
+  }
 }
 
 .heading2 {
@@ -32,4 +46,8 @@
 
 .code {
   @apply font-mono;
+}
+
+.regular {
+  @apply text-base;
 }
