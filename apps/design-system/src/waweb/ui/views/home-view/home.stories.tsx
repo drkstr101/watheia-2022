@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
+import { HomeView } from '@watheia/waweb-ui';
 
-import { Home } from './home';
-
-const meta: Meta<typeof Home> = {
-  title: 'watheia.waweb/ui/views/home',
-  component: Home,
+const meta: Meta<typeof HomeView> = {
+  title: 'watheia.waweb/ui/views/home-view',
+  component: HomeView,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
@@ -13,7 +12,7 @@ const meta: Meta<typeof Home> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Home>;
+type Story = StoryObj<typeof HomeView>;
 
 export const LoggedOut: Story = {};
 

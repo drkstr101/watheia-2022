@@ -7,12 +7,14 @@
   "files": [
     "../../node_modules/@nx/react/typings/cssmodule.d.ts",
     "../../node_modules/@nx/react/typings/image.d.ts",
-    "src/lib/gfx/social-icon/YouTube.tsx",
-    "src/lib/gfx/social-icon/GitHub.tsx",
-    "src/lib/gfx/social-icon/Twitter.tsx",
-    "src/lib/gfx/social-icon/Instagram.tsx",
-    "src/lib/gfx/social-icon/Facebook.tsx",
-    "src/lib/gfx/social-icon/social-icon.types.ts"
+    "src/ui/social-icon/YouTube.tsx",
+    "src/ui/social-icon/GitHub.tsx",
+    "src/ui/social-icon/Twitter.tsx",
+    "src/ui/social-icon/Instagram.tsx",
+    "src/ui/social-icon/Facebook.tsx",
+    "src/ui/social-icon/social-icon.types.ts",
+    "src/ui/views/home-view/home-view.fixtures.ts",
+    "src/ui/views/home-view/home-view.types.ts"
   ],
   "exclude": [
     "**/*.spec.ts",
