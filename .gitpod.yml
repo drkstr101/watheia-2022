@@ -1,0 +1,15 @@
+# Use a custom workspace image
+image:
+  file: .gitpod.Dockerfile
+
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - init: yarn # runs during prebuild
+    command: yarn nx serve home
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000 # bit component explorer
+    onOpen: open-preview
+  - port: 4200 # home
+    onOpen: open-preview
