@@ -7,6 +7,7 @@ module.exports = {
     join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+  presets: [require('../../tailwind-workspace-presets.js')],
   theme: {
     extend: {},
   },
