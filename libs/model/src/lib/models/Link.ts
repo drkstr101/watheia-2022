@@ -1,11 +1,16 @@
 import { ObjectModel } from '@stackbit/types';
 
-export const Button: ObjectModel = {
-  name: 'Button',
+export const Link: ObjectModel = {
+  name: 'Link',
   type: 'object',
   fields: [
     { name: 'label', type: 'string', default: 'Get Started' },
     { name: 'href', type: 'string', default: '/' },
-    { name: 'variant', type: 'enum', options: ['solid', 'outline', 'clear'], default: 'solid' },
+    {
+      name: 'variant',
+      type: 'enum',
+      options: ['primary', 'neutral', 'button'],
+      default: 'primary',
+    },
   ],
 };

@@ -6,6 +6,7 @@ export const Page: PageModel = {
   hideContent: true,
   urlPath: '/{slug}',
   filePath: 'content/pages/{slug}.md',
+  labelField: 'title',
   fields: [
     { name: 'title', type: 'string', required: true },
     {
@@ -13,5 +14,6 @@ export const Page: PageModel = {
       type: 'list',
       items: { type: 'model', models: ['Hero', 'DescriptionList'] },
     },
+    { name: 'theme', type: 'enum', options: ['light', 'dark', 'neutral'], default: 'light' },
   ],
 };

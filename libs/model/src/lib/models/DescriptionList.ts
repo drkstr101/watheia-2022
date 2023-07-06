@@ -17,6 +17,6 @@ export const DescriptionList: ObjectModel = {
         ],
       },
     },
-    { name: 'theme', type: 'enum', options: ['primary', 'dark'] },
+    { name: 'theme', type: 'enum', options: ['light', 'dark', 'neutral'], default: 'light' },
   ],
 };

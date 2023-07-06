@@ -14,7 +14,8 @@ export const Hero: ObjectModel = {
         { name: 'alt', type: 'string' },
       ],
     },
-    { name: 'button', type: 'model', models: ['Button'] },
-    { name: 'variant', type: 'enum', options: ['imgLeft', 'imgRight'] },
+    { name: 'button', type: 'model', models: ['Button', 'Link'] },
+    { name: 'variant', type: 'enum', options: ['split', 'cover'], default: 'split' },
+    { name: 'theme', type: 'enum', options: ['light', 'dark', 'neutral'], default: 'light' },
   ],
 };
