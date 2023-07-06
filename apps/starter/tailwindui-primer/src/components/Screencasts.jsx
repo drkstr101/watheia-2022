@@ -65,7 +65,7 @@ export function Screencasts() {
         <SectionHeading number="2" id="screencasts-title">
           Screencasts
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="font-display mt-8 text-4xl font-bold tracking-tight text-slate-900">
           Over an hour of high quality, step-by-step video content to sharpen your icon design
           workflow.
         </p>

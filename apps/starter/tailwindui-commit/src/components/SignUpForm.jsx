@@ -22,8 +22,8 @@ export function SignUpForm() {
       <Button type="submit" arrow>
         Get updates
       </Button>
-      <div className="absolute inset-0 -z-10 rounded-lg transition peer-focus:ring-4 peer-focus:ring-sky-300/15" />
-      <div className="absolute inset-0 -z-10 rounded-lg bg-white/2.5 ring-1 ring-white/15 transition peer-focus:ring-sky-300" />
+      <div className="peer-focus:ring-sky-300/15 absolute inset-0 -z-10 rounded-lg transition peer-focus:ring-4" />
+      <div className="bg-white/2.5 ring-white/15 absolute inset-0 -z-10 rounded-lg ring-1 transition peer-focus:ring-sky-300" />
     </form>
   );
 }

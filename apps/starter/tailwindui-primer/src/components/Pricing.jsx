@@ -10,7 +10,7 @@ function Plan({ name, description, price, features, href, featured }) {
   return (
     <div
       className={clsx(
-        'relative px-4 py-16 sm:rounded-5xl sm:px-10 md:py-12 lg:px-12',
+        'sm:rounded-5xl relative px-4 py-16 sm:px-10 md:py-12 lg:px-12',
         featured && 'bg-blue-600 sm:shadow-lg'
       )}
     >
@@ -36,7 +36,7 @@ function Plan({ name, description, price, features, href, featured }) {
         >
           {description}
         </p>
-        <p className="order-first flex font-display font-bold">
+        <p className="font-display order-first flex font-bold">
           <span
             className={clsx(
               'text-[1.75rem] leading-tight',
@@ -99,7 +99,7 @@ export function Pricing() {
         <SectionHeading number="4" id="pricing-title">
           Pricing
         </SectionHeading>
-        <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+        <p className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
           Pick your package
         </p>
         <p className="mt-4 max-w-xl text-lg tracking-tight text-slate-600">
@@ -108,7 +108,7 @@ export function Pricing() {
         </p>
       </Container>
       <div className="mx-auto mt-16 max-w-5xl lg:px-6">
-        <div className="grid bg-slate-50 sm:px-6 sm:pb-16 md:grid-cols-2 md:rounded-6xl md:px-8 md:pt-16 lg:p-20">
+        <div className="md:rounded-6xl grid bg-slate-50 sm:px-6 sm:pb-16 md:grid-cols-2 md:px-8 md:pt-16 lg:p-20">
           <Plan
             name="Essential"
             description="The perfect starting point if you’re on a budget."

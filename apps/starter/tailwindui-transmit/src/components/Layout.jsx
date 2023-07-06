@@ -176,7 +176,7 @@ export function Layout({ children }) {
 
   return (
     <>
-      <header className="bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
+      <header className="lg:w-112 xl:w-120 bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:items-start lg:overflow-y-auto">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <span className="font-mono text-slate-500">Hosted by</span>
           <span className="mt-6 flex gap-6 font-bold text-slate-900">
@@ -246,7 +246,7 @@ export function Layout({ children }) {
           </section>
         </div>
       </header>
-      <main className="border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
+      <main className="lg:ml-112 xl:ml-120 border-t border-slate-200 lg:relative lg:mb-28 lg:border-t-0">
         <Waveform className="absolute left-0 top-0 h-20 w-full" />
         <div className="relative">{children}</div>
       </main>
@@ -271,7 +271,7 @@ export function Layout({ children }) {
           </div>
         </div>
       </footer>
-      <div className="fixed inset-x-0 bottom-0 z-10 lg:left-112 xl:left-120">
+      <div className="lg:left-112 xl:left-120 fixed inset-x-0 bottom-0 z-10">
         <AudioPlayer />
       </div>
     </>

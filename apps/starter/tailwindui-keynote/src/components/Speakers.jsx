@@ -186,7 +186,7 @@ export function Speakers() {
           >
             Speakers
           </h2>
-          <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
+          <p className="font-display mt-4 text-2xl tracking-tight text-blue-900">
             Learn from the experts on the cutting-edge of deception at the most sinister
             companies.
           </p>
@@ -243,10 +243,10 @@ export function Speakers() {
               >
                 {day.speakers.map((speaker, speakerIndex) => (
                   <div key={speakerIndex}>
-                    <div className="group relative h-[17.5rem] transform overflow-hidden rounded-4xl">
+                    <div className="rounded-4xl group relative h-[17.5rem] transform overflow-hidden">
                       <div
                         className={clsx(
-                          'absolute bottom-6 left-0 right-4 top-0 rounded-4xl border transition duration-300 group-hover:scale-95 xl:right-6',
+                          'rounded-4xl absolute bottom-6 left-0 right-4 top-0 border transition duration-300 group-hover:scale-95 xl:right-6',
                           ['border-blue-300', 'border-indigo-300', 'border-sky-300'][
                             speakerIndex % 3
                           ]
@@ -265,7 +265,7 @@ export function Speakers() {
                         />
                       </div>
                     </div>
-                    <h3 className="mt-8 font-display text-xl font-bold tracking-tight text-slate-900">
+                    <h3 className="font-display mt-8 text-xl font-bold tracking-tight text-slate-900">
                       {speaker.name}
                     </h3>
                     <p className="mt-1 text-base tracking-tight text-slate-500">

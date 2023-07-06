@@ -63,7 +63,7 @@ export function Resources() {
         <SectionHeading number="3" id="resources-title">
           Resources
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="font-display mt-8 text-4xl font-bold tracking-tight text-slate-900">
           Tools and resources you can use to get started even faster and progress even further.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">

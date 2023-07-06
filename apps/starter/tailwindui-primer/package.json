@@ -16,7 +16,6 @@
     "postcss-focus-visible": "^6.0.4"
   },
   "devDependencies": {
-    "prettier-plugin-tailwindcss": "^0.2.6",
     "sharp": "^0.32.0"
   }
 }

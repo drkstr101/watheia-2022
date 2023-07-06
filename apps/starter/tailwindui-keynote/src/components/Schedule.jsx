@@ -279,7 +279,7 @@ export function Schedule() {
           <h2 className="font-display text-4xl font-medium tracking-tighter text-blue-600 sm:text-5xl">
             Our three day schedule is jam-packed with brilliant, creative, evil geniuses.
           </h2>
-          <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
+          <p className="font-display mt-4 text-2xl tracking-tight text-blue-900">
             The worst people in our industry giving the best talks you’ve ever seen. Nothing
             will be recorded and every attendee has to sign an NDA to watch the talks.
           </p>
