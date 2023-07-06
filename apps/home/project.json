@@ -67,7 +67,6 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "baseBranch": "alpha",
         "postTargets": ["home:release"],
         "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]"
       }
