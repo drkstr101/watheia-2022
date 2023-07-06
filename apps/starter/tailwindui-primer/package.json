@@ -1,0 +1,22 @@
+{
+  "name": "tailwindui-primer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "browserslist": "defaults, not ie <= 11",
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "clsx": "^1.2.1",
+    "focus-visible": "^5.2.0",
+    "postcss-focus-visible": "^6.0.4"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.2.6",
+    "sharp": "^0.32.0"
+  }
+}
