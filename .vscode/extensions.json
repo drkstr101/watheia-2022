@@ -4,6 +4,13 @@
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
     "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "csstools.postcss",
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
+    "davidanson.vscode-markdownlint",
+    "unifiedjs.vscode-mdx",
+    "bradlc.vscode-tailwindcss",
+    "redhat.vscode-yaml"
   ]
 }

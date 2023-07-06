@@ -62,6 +62,22 @@
       "options": {
         "lintFilePatterns": ["apps/home/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "baseBranch": "alpha",
+        "postTargets": ["home:release"],
+        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]"
+      }
+    },
+    "release": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
     }
   },
   "tags": []
